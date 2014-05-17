@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Ingeniero Juan Alberto Jiménez Ángel - Apasionado con las nuevas tecnologias de desarrollo de software que actualmente están permitiendo al mundo ser un lugar mas rápido y cómodo." />
+    
+    <meta name="author" content="Juan Alberto Jimenez Angel" />
+
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>.:CV. Juan Alberto Jimenez Angel</title>
+
+	<link rel="stylesheet" href="/static/css/normalize.css"/>
+	<link rel="stylesheet" href="/static/css/style.css"/>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="/static/images/bm.ico">
+</head>
+<body>
+	<header>
+		<section class="top">
+			<img id="logo" src="/static/images/bm3.png" alt=""/>
+			<h1><span>Ing.</span> Juan Alberto Jimenez Angel</h1>
+			<a href="https://github.com/jualjiman" target="_blank" title="GitHub" class="icon-github btnm"></a>
+			<a href="/static/CV.Juan.Alberto.Jimenez.Angel.pdf" target="_blank" title="Curriculum descargable" class="icon-download btnm1"></a>
+		</section>
+		<nav>
+			<ul>
+				<a href="#"><li class="infopersonal" title="Información general"> Información</li></a>
+				<a href="#"><li class="estudios" title="Estudios y cursos"> Estudios y cursos</li></a>
+				<a href="#"><li class="proyectos" title="Proyectos"> Proyectos</li></a>
+			</ul>
+		</nav>
+	</header>
+
+	<section id="infopersonal">
+		<h2 class="titulom">Información general</h2>
+		<article id="tagint">
+			<figure>
+				<img src="/static/images/avatar.jpg" alt="">
+			</figure>
+			<h2>Juan Alberto Jimenez Angel</h2>
+			<h3>Ingeniero en sistemas computacionales</h3>
+			<p>Apasionado con las nuevas tecnologias de desarrollo de software que actualmente están permitiendo al mundo ser un lugar mas rápido y cómodo. </p>
+		</article>
+		
+		<section class="cinformacion">
+			{%for info in infos%}
+				<article>
+					<div class="ccamp">{{ info.campo }}</div>
+					<div class="cinfo">{{ info.info }}</div>	
+				</article>
+			{% endfor %}
+		</section>
+
+		<h2 class="titulom">Tecnologías</h2>
+
+		<section class="cinformacion">
+			{%for tecno in tecnos%}
+				<article>
+					<div class="ccamp">{{ tecno.campo }}</div>
+					<div class="cinfo">{{ tecno.info }}</div>	
+				</article>
+			{% endfor %}
+		</section>
+
+		<h2 class="titulom">Lenguajes</h2>
+		<section class="cinformacion">
+			{%for leng in lengs%}
+				<article>
+					<div class="ccamp">{{ leng.campo }}</div>
+					<div class="cinfo">{{ leng.info }}</div>	
+				</article>
+			{% endfor %}
+		</section>
+
+		<h2 class="titulom">Experiencia profesional</h2>
+		<section class="cinformacion">
+			{%for exp in exps%}
+				<article>
+					<div class="ccamp">
+						<p><strong>{{ exp.puesto }}</strong></p>
+						<p>{{ exp.lugar }}</p>
+						<p>{{ exp.fecha }}</p>
+					</div>
+					<div class="cinfo">{{ exp.info }}</div>	
+				</article>
+			{% endfor %}
+		</section>
+	</section>
+
+	<section id="estudios" class="hiddn">
+		<h2 class="titulom">Estudios</h2>
+
+		{%for estu in estus%}
+			<article class="universidad">
+				<div class="einfo">
+					<h3>{{ estu.titulo }}</h3>
+					<p class="etitulo">{{ estu.nombre }}</p>
+					<p class="edetalles">{{estu.descripcion}}</p>
+					<p class="efecha">{{estu.fecha}}</p>
+					<p class="eescuela">{{estu.lugar}}</p>
+				</div>
+				<div class="eimg">
+					{% if estu.completado == True %}
+						<span class="icon-bookmark"></span>
+					{% endif %}
+				</div>
+			</article>
+		{% endfor %}
+
+	</section>
+
+	<section id="proyectos" class="hiddn">
+		<h2 class="titulo">Proyectos</h2>
+	
+		{% for proye in proyes %}
+		<article class="curso">
+			<a href="{{ proye.link }}" target="_blank" class="url"></a>
+			<figure style="background-image:url('{{ proye.imagen.url }}');">
+			</figure>
+			<div class="curso_texto">
+				<h2> {{ proye.titulo }} </h2>
+				<p>{{ proye.descripcion }}</p>
+				<p class="tecnologias">{{ proye.tecnologias }}</p>
+				<p class="fecha">{{ proye.fecha }}</p>
+			</div>
+		</article>
+		{% endfor %}
+
+	</section>
+
+	<footer>
+		<p id="footer_titulo">
+			<span>Curriculum</span> y portafolio digital
+		</p>
+
+		<p id="footer_creditos">Ing. Juan Alberto Jimenez Angel</p>
+	</footer>
+	<script src="/static/js/jquery-2.1.0.min.js"></script>
+	<script src="/static/js/f.js"></script>
+</body>
+</html>
