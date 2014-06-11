@@ -1,9 +1,10 @@
+ # -*- coding: utf-8 -*-
 from django.db import models
 
 # Create your models here.
 
 categorias = (
-	('IG', 'Información general'),
+	('IG', u'Información general'),
 	('TG', 'Tecnologias'),
 	('LG', 'Lenguajes'),
 )
