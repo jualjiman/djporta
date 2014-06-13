@@ -66,7 +66,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-mx'
 
 TIME_ZONE = 'UTC'
 
@@ -76,12 +76,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+#DEFAULT_CHARSET = 'utf-8'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/var/www/djporta/administrador/static/'
-STATIC_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['static'])
+STATIC_URL = '/static/'
+STATIC_ROOT = '/var/www/djporta/administrador/static' #os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['static'])
+
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
 MEDIA_URL = '/var/www/djporta/media/'

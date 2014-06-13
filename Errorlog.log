@@ -1,0 +1,2 @@
+[Fri Jun 13 16:12:38.955562 2014] [:error] [pid 32762] [remote 159.16.237.93:38411] mod_wsgi (pid=32762): Exception occurred processing WSGI script '/var/www/djporta/djporta/wsgi.py'.
+[Fri Jun 13 16:12:38.955666 2014] [:error] [pid 32762] [remote 159.16.237.93:38411] IOError: failed to write data

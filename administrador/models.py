@@ -17,7 +17,7 @@ class InformacionGeneral(models.Model):
 	info = models.CharField(max_length=90)
 	categoria = models.CharField(max_length=2, choices=categorias)
 
-	def __str__(self):
+	def __unicode__(self): # __str__(self):
 		return self.campo
 
 class ExperienciaProfesional(models.Model):
@@ -29,7 +29,7 @@ class ExperienciaProfesional(models.Model):
 	fecha = models.CharField(max_length=50) 
 	info = models.TextField(blank=True)
 
-	def __str__(self):
+	def __unicode__(self): # __str__(self):
 		return self.puesto
 
 class Estudio(models.Model):
@@ -41,7 +41,7 @@ class Estudio(models.Model):
 	lugar = models.CharField(max_length=50, blank=True)
 	completado = models.BooleanField(default=False)
 
-	def __str__(self):
+	def __unicode__(self): # __str__(self):
 		return self.titulo
 
 class Proyecto(models.Model):
