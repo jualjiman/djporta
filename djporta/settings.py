@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '9%cucr(gc&t15fe#pj#m%96-$1wj(**9s7j$*@!o=c07)ijcc*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -89,4 +89,4 @@ STATICFILES_DIRS = (
 
 
 MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
-MEDIA_URL = '/media/'
+MEDIA_URL = '/var/www/djporta/media/'
