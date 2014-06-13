@@ -59,7 +59,7 @@ WSGI_APPLICATION = 'djporta.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/var/www/djporta/db.sqlite3',
+        'NAME': '/var/www/djporta/db/db.sqlite3',
     }
 }
 
