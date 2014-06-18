@@ -12,7 +12,12 @@ class EstAdmin(admin.ModelAdmin):
 	list_display = ('titulo','nombre','lugar','completado')
 
 class ProyeAdmin(admin.ModelAdmin):
-	list_display = ('titulo','descripcion','fecha')
+	list_display = ('titulo','descripcion','fecha', 'imagen_proyecto')
+
+	def imagen_proyecto(self,obj):
+		return '<img src="%s" />' % obj.imagen.url
+
+	imagen_proyecto.allow_tags = True
 
 admin.site.register(InformacionGeneral,InfoGralAdmin)
 admin.site.register(ExperienciaProfesional,ExpProAdmin)
