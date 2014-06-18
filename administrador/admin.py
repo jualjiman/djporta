@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import *
+from sorl.thumbnail import get_thumbnail
 
 # Register your models here.
 class InfoGralAdmin(admin.ModelAdmin):
@@ -15,7 +16,7 @@ class ProyeAdmin(admin.ModelAdmin):
 	list_display = ('titulo','descripcion','fecha', 'imagen_proyecto')
 
 	def imagen_proyecto(self,obj):
-		return '<img src="%s" />' % obj.imagen.url
+		return '<img src="%s" />' % get_thumbnail(obj.imagen,'50x50').url
 
 	imagen_proyecto.allow_tags = True
 
