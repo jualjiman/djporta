@@ -87,4 +87,4 @@ STATIC_ROOT = '/var/www/djporta/administrador/static' #os.sep.join(os.path.abspa
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
-MEDIA_URL = '/var/www/djporta/media/'
+MEDIA_URL = '/media/'
