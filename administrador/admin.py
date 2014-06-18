@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import *
-from sorl.thumbnail import get_thumbnail
+from sorl.thumbnail.shortcuts import get_thumbnail
 
 # Register your models here.
 class InfoGralAdmin(admin.ModelAdmin):
