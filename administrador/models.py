@@ -51,7 +51,7 @@ class Proyecto(models.Model):
 	tecnologias = models.CharField(max_length=80)
 	fecha = models.CharField(max_length=50)
 	link = models.URLField()
-	imagen = ImageField(upload_to='proyectos', size=(694, 418))
+	imagen = models.ImageField(upload_to='proyectos', size=(694, 418))
 	#imagen = models.FileField(upload_to="proyectos")
 
 	def __str__(self):
