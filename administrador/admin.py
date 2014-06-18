@@ -16,7 +16,7 @@ class ProyeAdmin(admin.ModelAdmin):
 	list_display = ('titulo','descripcion','fecha', 'imagen_proyecto')
 
 	def imagen_proyecto(self,obj):
-		return '<img src="%s" />' % get_thumbnail(obj.imagen,'100x60', crop='center').url
+		return '<img src="%s" />' % get_thumbnail(obj.imagen,'100x60', crop='center').url #format='PNG'
 
 	imagen_proyecto.allow_tags = True
 
