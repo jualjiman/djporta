@@ -1,6 +1,6 @@
  # -*- coding: utf-8 -*-
 from django.db import models
-from sorl.thumbnail import sorl.thumbnail.fields
+from sorl.thumbnail.fields import ThumbnailField
 
 # Create your models here.
 
