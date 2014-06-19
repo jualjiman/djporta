@@ -1,3 +1,4 @@
+{% load thumbnail %}
 <!doctype html>
 <html lang="es">
 <head>
@@ -115,8 +116,14 @@
 		{% for proye in proyes %}
 		<article class="curso">
 			<a href="{{ proye.link }}" target="_blank" class="url"></a>
-			<figure style="background-image:url('{{ proye.imagen.url }}');">
-			</figure>
+
+			{% thumbnail proye.imagen "694x418" crop="center" as im %}
+			    <figure style="background-image:url('{{ im.url }}');">
+				</figure>
+			{% endthumbnail %}
+
+
+			
 			<div class="curso_texto">
 				<h2> {{ proye.titulo }} </h2>
 				<p>{{ proye.descripcion }}</p>
