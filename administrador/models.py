@@ -1,6 +1,6 @@
  # -*- coding: utf-8 -*-
 from django.db import models
-from sorl.thumbnail.fields import ImageField
+from sorl.thumbnail import ImageField
 
 # Create your models here.
 
@@ -51,6 +51,7 @@ class Proyecto(models.Model):
 	tecnologias = models.CharField(max_length=80)
 	fecha = models.CharField(max_length=50)
 	link = models.URLField()
+	imagen = ImageField(upload_to="proyectos")
 	#imagen = models.ImageField(upload_to='proyectos', size=(694, 418))
 	#imagen = models.FileField(upload_to="proyectos")
 
