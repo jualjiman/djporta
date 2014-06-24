@@ -29,7 +29,16 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'django.core.context_processors.request',
+)
+
+GRAPPELLI_ADMIN_TITLE = "Jualjiman"
+
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -86,7 +95,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/var/www/djporta/administrador/static' #os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['static'])
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+)
+
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
 MEDIA_URL = '/media/'
+
