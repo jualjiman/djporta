@@ -70,7 +70,7 @@ WSGI_APPLICATION = 'djporta.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/var/www/djporta/db/db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'djporta/db/db.sqlite3'),#'/home/betto/GitHub/djporta/djporta/db/db.sqlite3',#
     }
 }
 
@@ -93,7 +93,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/var/www/djporta/administrador/static' #os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['static'])
+#STATIC_ROOT = '/var/www/djporta/administrador/static' #os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['static'])
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
