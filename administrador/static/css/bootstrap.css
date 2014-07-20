@@ -4591,6 +4591,7 @@ a.list-group-item.active > .badge,
 .thumbnail .caption {
   padding: 9px;
   color: #333333;
+  min-height: 215px;
 }
 .alert {
   padding: 15px;
