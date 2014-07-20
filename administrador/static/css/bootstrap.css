@@ -5445,10 +5445,6 @@ button.close {
   height: 50px;
   overflow: scroll;
 }
-.navbar-default .navbar-nav > li > a {
-  border: solid 1px #e7e7e7;
-  border-radius: 5px;  
-}
 
 @media (min-width: 768px) {
   .modal-dialog {
@@ -5462,6 +5458,10 @@ button.close {
   .modal-sm {
     width: 300px;
   }
+}
+.navbar-default .navbar-nav > li > a {
+  border: solid 1px #e7e7e7;
+  border-radius: 5px;  
 }
 @media (min-width: 992px) {
   .modal-lg {
