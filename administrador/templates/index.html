@@ -110,7 +110,8 @@
 			<div class="row">
 				{%for estu in estus%}
 				<div class="col-sm-4 separacionVerticalMin">
-					<h4 class="titulo">{{ estu.nombre }}<p class="expe-lugar">{{ estu.titulo }}</p></h4>
+					<h4 class="titulo">{{ estu.nombre }}</h4>
+					<p class="expe-lugar">{{ estu.titulo }}</p>
 					<div class="desc">
 					<p class="expe-fecha">{{estu.fecha}}</p>
 					{{estu.descripcion}}</div>
@@ -133,7 +134,8 @@
 				      	{% endthumbnail %}
 	
 				      <div class="caption">
-				        <h4 class="titulo">{{ proye.titulo }}<p class="expe-lugar">{{ proye.fecha }}</p></h4>
+				        <h4 class="titulo">{{ proye.titulo }}</h4>
+				        <p class="expe-lugar">{{ proye.fecha }}</p>
 						<div class="desc">
 							<p class="expe-fecha">{{ proye.tecnologias }}</p>
 							{{ proye.descripcion }}
