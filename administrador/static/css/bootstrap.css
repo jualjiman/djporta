@@ -1256,6 +1256,10 @@ dd {
   .dl-horizontal dd {
     margin-left: 180px;
   }
+  .navbar-default .navbar-nav > li > a {
+    border: solid 1px #e7e7e7;
+    border-radius: 5px;  
+  }
 }
 abbr[title],
 abbr[data-original-title] {
@@ -5457,10 +5461,6 @@ button.close {
   }
   .modal-sm {
     width: 300px;
-  }
-  .navbar-default .navbar-nav > li > a {
-    border: solid 1px #e7e7e7;
-    border-radius: 5px;  
   }
 }
 @media (min-width: 992px) {
