@@ -4089,9 +4089,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #e7e7e7;
   font-size: 14px;
   font-weight: bold;
-  border:none;
-  border-radius: 0 !important;
-  border-bottom: solid 1px #e7e7e7;
+  border: solid 1px #e7e7e7;
+  border-radius: 5px;
   transition: all 0.5s ease;
 }
 .navbar-default .navbar-nav > li > a:hover,
@@ -4125,8 +4124,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-form {
   border-color: #37776D;
   text-align: center;
-  margin-bottom: 20px;
-
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
@@ -5462,10 +5459,6 @@ button.close {
   .modal-sm {
     width: 300px;
   }
-}
-.navbar-default .navbar-nav > li > a {
-  border: solid 1px #e7e7e7;
-  border-radius: 5px;
 }
 @media (min-width: 992px) {
   .modal-lg {
