@@ -40,7 +40,7 @@
 			  </div><!-- /.container-fluid -->
 			</nav>
 		</div>
-		<a href="/static/Curriculum Juan Alberto Jimenez Angel Actual.pdf"><span class="icon-cloud-download"></span></a>
+		<a href="/static/Curriculum Juan Alberto Jimenez Angel Actual.pdf" target="_blank"><span class="icon-cloud-download"></span></a>
 	</header>
 	
 	<section id="info">
@@ -112,8 +112,8 @@
 			<div class="row">
 				{%for estu in estus%}
 				<div class="col-sm-6 col-md-4 separacionVerticalMin">
-					<h4 class="titulo">{{ estu.nombre }}</h4>
-					<p class="expe-lugar">{{ estu.titulo }}</p>
+					<h4 class="titulo">{{ estu.nombre }}<span class="subtitulo">{{estu.tutulo}})</span></h4>
+					<p class="expe-lugar">{{ estu.lugar }}</p>
 					<div class="desc">
 					<p class="expe-fecha">{{estu.fecha}}</p>
 					{{estu.descripcion}}</div>
