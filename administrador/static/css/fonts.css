@@ -23,6 +23,13 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-award:before,
+.icon-github,
+.icon-information{
+	padding-right: 5px;
+	font-size: 16px;
+}
+
 .icon-award:before {
 	content: "\e601";
 }
