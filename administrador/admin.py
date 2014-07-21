@@ -4,10 +4,10 @@ from sorl.thumbnail.shortcuts import get_thumbnail
 
 # Register your models here.
 class InfoGralAdmin(admin.ModelAdmin):
-	list_display = ('campo','info','categoria','prioridad')
+	list_display = ('campo','info','categoria')
 
 class ExpProAdmin(admin.ModelAdmin):
-	list_display = ('puesto','lugar','desde','hasta')
+	list_display = ('puesto','lugar',)
 
 class EstAdmin(admin.ModelAdmin):
 	list_display = ('titulo','nombre','lugar','completado')
