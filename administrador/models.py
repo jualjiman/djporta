@@ -1,9 +1,7 @@
  # -*- coding: utf-8 -*-
 from django.db import models
 from sorl.thumbnail import ImageField
-import sys    # sys.setdefaultencoding is cancelled by site.py
-reload(sys)    # to re-enable sys.setdefaultencoding()
-sys.setdefaultencoding('utf-8')
+from datetime import date
 
 # Create your models here.
 
@@ -20,7 +18,7 @@ class InformacionGeneral(models.Model):
 	campo = models.CharField(max_length=60)
 	info = models.CharField(max_length=90)
 	categoria = models.CharField(max_length=2, choices=categorias)
-	prioridad = models.IntegerField()
+	prioridad = models.IntegerField(default=1)
 
 	def __unicode__(self): # __str__(self):
 		return self.campo
@@ -32,8 +30,8 @@ class ExperienciaProfesional(models.Model):
 	puesto = models.CharField(max_length=50)
 	lugar = models.CharField(max_length=50)
 	# fecha = models.CharField(max_length=50) 
-	desde models.DateField()
-	hasta models.DateField()
+	desde = models.DateField(default = date.today)
+	hasta = models.DateField(default = date.today, blank = True, null = True)
 	info = models.TextField(blank=True)
 
 	def __unicode__(self): # __str__(self):
@@ -44,7 +42,7 @@ class Estudio(models.Model):
 	titulo = models.CharField(max_length=50)
 	nombre = models.CharField(max_length=50)
 	descripcion = models.TextField(blank=True)
-	fecha = models.CharField(max_length=50)
+	desde = models.DateField(default = date.today)
 	lugar = models.CharField(max_length=50, blank=True)
 	completado = models.BooleanField(default=False)
 
@@ -56,7 +54,7 @@ class Proyecto(models.Model):
 	descripcion = models.TextField(blank=True)
 	tecnologias = models.CharField(max_length=80)
 	# fecha = models.CharField(max_length=50)
-	fecha models.DateField()
+	desde = models.DateField(default = date.today)
 	link = models.URLField(blank=True)
 	imagen = ImageField(upload_to="proyectos")
 
