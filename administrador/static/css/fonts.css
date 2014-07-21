@@ -24,8 +24,8 @@
 }
 
 .icon-award:before,
-.icon-github,
-.icon-information{
+.icon-github:before,
+.icon-information:before{
 	padding-right: 5px;
 	font-size: 16px;
 }
