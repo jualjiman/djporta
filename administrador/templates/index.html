@@ -32,15 +32,16 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
-			        <li><a href="#" class="btnnb b1"><span class="icon-uniE604"></span>Información</a></li>
-			        <li><a href="#" class="btnnb b2"><span class="icon-book"></span>Estudios</a></li>
-			        <li><a href="#" class="btnnb b3"><span class="icon-wrench"></span>Proyectos</a></li>
+			        <li><a href="#" class="btnnb b1"><span class="icon-information"></span>Información</a></li>
+			        <li><a href="#" class="btnnb b2"><span class="icon-studies"></span>Estudios</a></li>
+			        <li><a href="#" class="btnnb b3"><span class="icon-projects"></span>Proyectos</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
 			</nav>
 		</div>
-		<a href="/static/Curriculum Juan Alberto Jimenez Angel Actual.pdf" target="_blank"><span class="icon-cloud-download" title="Descargar curriculum"></span></a>
+		<a href="https://github.com/jualjiman" target="_blank"><span class="icon-github" title="GitHub:Jualjiman"></span></a>
+		<a href="/static/Curriculum Juan Alberto Jimenez Angel Actual.pdf" target="_blank"><span class="icon-download" title="Descargar curriculum"></span></a>
 	</header>
 	
 	<section id="info">
@@ -117,6 +118,9 @@
 					<div class="desc">
 					<p class="expe-fecha">{{estu.fecha}}</p>
 					{{estu.descripcion}}</div>
+					{% if estu.completado == True %}
+						<span class="icon-award"></span>
+					{% endif %}
 				</div>
 				{% endfor %}
 			</div>
