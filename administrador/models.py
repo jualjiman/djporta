@@ -17,6 +17,7 @@ class InformacionGeneral(models.Model):
 	campo = models.CharField(max_length=60)
 	info = models.CharField(max_length=90)
 	categoria = models.CharField(max_length=2, choices=categorias)
+	prioridad = models.IntegerField()
 
 	def __unicode__(self): # __str__(self):
 		return self.campo
@@ -27,7 +28,9 @@ class ExperienciaProfesional(models.Model):
 
 	puesto = models.CharField(max_length=50)
 	lugar = models.CharField(max_length=50)
-	fecha = models.CharField(max_length=50) 
+	# fecha = models.CharField(max_length=50) 
+	desde models.DateField()
+	hasta models.DateField()
 	info = models.TextField(blank=True)
 
 	def __unicode__(self): # __str__(self):
@@ -49,11 +52,10 @@ class Proyecto(models.Model):
 	titulo = models.CharField(max_length=50)
 	descripcion = models.TextField(blank=True)
 	tecnologias = models.CharField(max_length=80)
-	fecha = models.CharField(max_length=50)
-	link = models.URLField()
+	# fecha = models.CharField(max_length=50)
+	fecha models.DateField()
+	link = models.URLField(blank=True)
 	imagen = ImageField(upload_to="proyectos")
-	#imagen = models.ImageField(upload_to='proyectos', size=(694, 418))
-	#imagen = models.FileField(upload_to="proyectos")
 
 	def __str__(self):
 		return self.titulo
