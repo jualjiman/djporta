@@ -102,7 +102,12 @@
 					<h4 class="titulo">{{ exp.puesto }}</h4>
 					<p class="expe-lugar">{{ exp.lugar }}</p>
 					<div class="desc">
-					<p class="expe-fecha">{{ exp.fecha }}</p>
+					<p class="expe-fecha">
+						{{ exp.desde|date:"M Y" }}
+						{% if exp.hasta != null%}
+							{{ exp.hasta|date:"M Y" }}
+						{% endif %}
+					</p>
 					{{ exp.info }}</div>
 				</div>
 				{% endfor %}
