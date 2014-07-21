@@ -42,7 +42,7 @@ class Estudio(models.Model):
 	titulo = models.CharField(max_length=50)
 	nombre = models.CharField(max_length=50)
 	descripcion = models.TextField(blank=True)
-	desde = models.DateField(default = date.today)
+	fecha = models.DateField(default = date.today)
 	lugar = models.CharField(max_length=50, blank=True)
 	completado = models.BooleanField(default=False)
 
