@@ -1,6 +1,9 @@
  # -*- coding: utf-8 -*-
 from django.db import models
 from sorl.thumbnail import ImageField
+import sys    # sys.setdefaultencoding is cancelled by site.py
+reload(sys)    # to re-enable sys.setdefaultencoding()
+sys.setdefaultencoding('utf-8')
 
 # Create your models here.
 
