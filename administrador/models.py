@@ -54,7 +54,7 @@ class Proyecto(models.Model):
 	descripcion = models.TextField(blank=True)
 	tecnologias = models.CharField(max_length=80)
 	# fecha = models.CharField(max_length=50)
-	desde = models.DateField(default = date.today)
+	fecha = models.DateField(default = date.today)
 	link = models.URLField(blank=True)
 	imagen = ImageField(upload_to="proyectos")
 
