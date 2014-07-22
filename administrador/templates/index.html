@@ -58,7 +58,7 @@
 			<h3 class="text-center tituloPrincipal">Información general</h3>
 			<div class="row">
 				{%for info in infos%}
-					<div class="col-sm-6 col-sm-4 col-md-3 gral">
+					<div class="col-sm-6 col-sm-4 col-md-3 separacionVerticalMin gral">
 						<h4 class="titulo">{{ info.campo }}</h4>
 						<div class="desc">{{ info.info }}</div>
 					</div>
@@ -72,7 +72,7 @@
 				<h3 class="text-center tituloPrincipal">Habilidades</h3>
 				<div class="row">
 					{%for tecno in tecnos%}
-					<div class="col-sm-6 col-sm-4 tecn">
+					<div class="col-sm-6 col-sm-4 separacionVerticalMin tecn">
 						<h4 class="titulo">{{ tecno.campo }}</h4>
 						<div class="desc">{{ tecno.info }}</div>
 					</div>
@@ -85,7 +85,7 @@
 				<h3 class="text-center tituloPrincipal">Lenguajes</h3>
 				<div class="row">
 					{%for leng in lengs%}
-					<div class="col-sm-4 col-md-3 leng">
+					<div class="col-sm-4 col-md-3 separacionVerticalMin leng">
 						<h4 class="titulo">{{ leng.campo }}</h4>
 						<div class="desc">{{ leng.info }}</div>
 					</div>
@@ -98,7 +98,7 @@
 			<h3 class="text-center tituloPrincipal">Experiencia profesional</h3>
 				<div class="row">
 					{%for exp in exps%}
-					<div class="col-sm-6 col-md-4 expe">
+					<div class="col-sm-6 col-md-4 separacionVerticalMin expe">
 						<h4 class="titulo">{{ exp.puesto }}</h4>
 						<p class="expe-lugar">{{ exp.lugar }}</p>
 						<div class="desc">

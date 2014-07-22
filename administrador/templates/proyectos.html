@@ -54,7 +54,7 @@
 			<h3 class="text-center tituloPrincipal">Proyectos</h3>
 				<div class="row">
 					{% for proye in proyes %}
-					<div class="col-sm-6 col-md-4 proye">
+					<div class="col-sm-6 col-md-4 separacionVerticalMin proye">
 						<a class="thumbnail" href="{{ proye.link }}" target="_blank">
 							{% thumbnail proye.imagen "694x418" crop="center" as im %}
 					      <img src="{{ im.url }}" alt="...">
