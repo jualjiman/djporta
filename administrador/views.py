@@ -4,11 +4,11 @@ from .models import *
 
 # Create your views here.
 def home(request):
-	infos = InformacionGeneral.objects.filter(categoria = "IG")
-	tecnos = InformacionGeneral.objects.filter(categoria = "TG")
-	lengs = InformacionGeneral.objects.filter(categoria = "LG")
-	exps = ExperienciaProfesional.objects.all()
-	estus = Estudio.objects.all()
-	proyes = Proyecto.objects.all()
+	infos = InformacionGeneral.objects.filter(categoria = "IG").order_by("prioridad")
+	tecnos = InformacionGeneral.objects.filter(categoria = "TG").order_by("prioridad")
+	lengs = InformacionGeneral.objects.filter(categoria = "LG").order_by("prioridad")
+	exps = ExperienciaProfesional.objects.all().order_by("-desde")
+	estus = Estudio.objects.all().order_by("-fecha")
+	proyes = Proyecto.objects.all().order_by("-fecha")
 	
 	return render(request,"index.html",{"infos": infos, "tecnos":tecnos,"lengs":lengs,"exps":exps,"estus":estus,"proyes":proyes})
