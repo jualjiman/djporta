@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$("#loading img").hide();
 	$("#mainContent").fadeIn();
 	setObjects();
 });
