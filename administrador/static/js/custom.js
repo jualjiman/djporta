@@ -24,5 +24,5 @@ $(document).on("click",".btnnb",function(e){
 		$("#estu").hide();
 		$("#proy").fadeIn();
 	}
-	console.log("done");
 });
+
