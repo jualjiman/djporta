@@ -60,6 +60,8 @@
 					<div class="col-sm-6 col-md-4 separacionVerticalMin proye">
 						{% if proye.link|length > 0 %}
 							<a class="thumbnail" href="{{ proye.link }}" target="_blank">
+						{%else%}
+							<div class="thumbnail">
 						{% endif %}
 							{% thumbnail proye.imagen "694x418" crop="center" as im %}
 					      <img src="{{ im.url }}" alt="...">
@@ -75,6 +77,8 @@
 						    </div>
 						{% if proye.link|length > 0 %}
 					    	</a>
+					    {%else%}
+					    	</div>
 					    {% endif %}
 
 					</div>
