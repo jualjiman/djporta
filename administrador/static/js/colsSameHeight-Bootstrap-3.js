@@ -18,11 +18,11 @@ function setObjects(){
 	//current windows size
 	var win = $(window).width();
 
+	console.log(win + " - " + md);
 	if(win > md){
-		for(var i = 0; i < objects.length; i++){
+		console.log("si");
+		for(var i = 0; i < objects.length; i++)
 			sameHeight(objects[i],win);
-		}
-		console.log("Hecho");
 	}
 }
 
