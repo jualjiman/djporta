@@ -18,10 +18,12 @@ function setObjects(){
 	//current windows size
 	var win = $(window).width();
 
-	for(var i = 0; i < objects.length; i++){
-		sameHeight(objects[i],win);
+	if(win > md){
+		for(var i = 0; i < objects.length; i++){
+			sameHeight(objects[i],win);
+		}
+		console.log("Hecho");
 	}
-	console.log("Hecho");
 }
 
 function sameHeight($object, win){
@@ -40,4 +42,5 @@ function sameHeight($object, win){
     $object.each( function(){
 		$( this ).height(maxHeight)
     });
+	
 }
