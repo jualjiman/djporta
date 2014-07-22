@@ -58,7 +58,9 @@
 				<div class="row">
 					{% for proye in proyes %}
 					<div class="col-sm-6 col-md-4 separacionVerticalMin proye">
-						<a class="thumbnail" href="{{ proye.link }}" target="_blank">
+						{% if proye.link|length > 0 %}
+							<a class="thumbnail" href="{{ proye.link }}" target="_blank">
+						{% endif %}
 							{% thumbnail proye.imagen "694x418" crop="center" as im %}
 					      <img src="{{ im.url }}" alt="...">
 					      	{% endthumbnail %}
@@ -71,7 +73,10 @@
 								{{ proye.descripcion }}
 							</div>
 						    </div>
-					    </a>
+						{% if proye.link|length > 0 %}
+					    	</a>
+					    {% endif %}
+
 					</div>
 					{% endfor %}
 				</div>
