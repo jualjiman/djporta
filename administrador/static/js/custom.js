@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	setObjects();
 	$("#mainContent").fadeIn();
+	setObjects();
 });
 
 // $(document).on("click",".btnnb",function(e){
