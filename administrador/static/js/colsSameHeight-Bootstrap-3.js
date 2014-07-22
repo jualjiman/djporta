@@ -27,26 +27,30 @@ function sameHeight($object, win){
 	var objSize = $object.size();
 	// var init = 0, fin = objSize;
 
-	if(win > sm){
-		
-		// iterando los objectos
-		// $object.slice(init,fin).each( function(){
-		$object.each( function(){
-			$( this ).height('initial')
-			cur = $( this ).height();
-	    	if(cur > maxHeight)
-	    		maxHeight = cur;
-	    });
-	    $object.each( function(){
-			$( this ).height(maxHeight)
-	    });
-	    console.log("1");
-	}
-	else
-	{
-		$object.each( function(){
-			$( this ).height('initial')
-		});
-		console.log("0");
-	}
+	// iterando los objectos
+	// $object.slice(init,fin).each( function(){
+	$object.each( function(){
+
+		if(win < sm){//xs
+			console.log("xs");
+		}
+		else if(win >= sm && win < md){//sm
+			console.log("sm");
+		}
+		else if(win >= md && win < lg ){//md
+			console.log("md");
+		}
+		else{//lg
+			console.log("lg");
+		}
+
+
+		$( this ).height('initial')
+		cur = $( this ).height();
+    	if(cur > maxHeight)
+    		maxHeight = cur;
+    });
+    $object.each( function(){
+		$( this ).height(maxHeight)
+    });
 }
