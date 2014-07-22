@@ -3,6 +3,7 @@ $(document).ready(function(){
 });
 
 $(document).on("click",".btnnb",function(e){
+	setObjects();
 	var clss = $(this).attr("class");
 	clsf = clss.substring(6);
 
