@@ -3,8 +3,8 @@
 
 $(document).ready(function(){
 
-	//start at begin
-	setObjects();
+	//start at begin currently starting at the document ready event of the custom
+	//setObjects();
 
 	//listen resize
 	$(window).on('resize', function() {
