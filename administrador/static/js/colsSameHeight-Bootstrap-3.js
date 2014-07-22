@@ -21,6 +21,7 @@ function setObjects(){
 	for(var i = 0; i < objects.length; i++){
 		sameHeight(objects[i],win);
 	}
+	console.log("Hecho");
 }
 
 function sameHeight($object, win){
