@@ -36,9 +36,9 @@
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
-			        <li><a href="#" class="btnnb b1"><span class="icon-information"></span>Información</a></li>
-			        <li><a href="#" class="btnnb b2"><span class="icon-studies"></span>Estudios</a></li>
-			        <li><a href="#" class="btnnb b3"><span class="icon-projects"></span>Proyectos</a></li>
+			        <li><a href="/"><span class="icon-information"></span>Información</a></li>
+			        <li><a href="/estudios"><span class="icon-studies"></span>Estudios</a></li>
+			        <li><a href="/proyectos"><span class="icon-projects"></span>Proyectos</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
@@ -48,7 +48,7 @@
 		<a href="/static/Curriculum Juan Alberto Jimenez Angel Actual.pdf" target="_blank"><span class="icon-download" title="Descargar curriculum"></span></a>
 	</header>
 	
-	<section id="info">
+	<section id="mainContent">
 		<div class="jumbotron marginTopHeader text-center">
 		  <h2>Ingeniero en sistemas computacionales</h2>
 		  <p>Apasionado con las nuevas tecnologías de desarrollo de software que actualmente están permitiendo ser al mundo un lugar más rápido y cómodo.</p>
@@ -109,54 +109,6 @@
 							{% endif %}
 						</p>
 						{{ exp.info }}</div>
-					</div>
-					{% endfor %}
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="estu">
-		<div class="container-fluid">
-			<div class="container separacionVertical">
-			<h3 class="text-center tituloPrincipal">Estudios y cursos</h3>
-				<div class="row">
-					{%for estu in estus%}
-					<div class="col-sm-6 col-md-4 separacionVerticalMin pRelative curs">
-						<h4 class="titulo">{{ estu.nombre }}<span class="subtitulo">{{estu.titulo}}</span></h4>
-						<p class="expe-lugar">{{ estu.lugar }}</p>
-						<div class="desc">
-						<p class="expe-fecha">{{ estu.fecha|date:"M Y" }}</p>
-						{{estu.descripcion}}</div>
-						{% if estu.completado == True %}
-							<span class="icon-award" title="Teminado"></span>
-						{% endif %}
-					</div>
-					{% endfor %}
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="proy">
-		<div class="container-fluid">
-			<div class="container separacionVertical">
-			<h3 class="text-center tituloPrincipal">Proyectos</h3>
-				<div class="row">
-					{% for proye in proyes %}
-					<div class="col-sm-6 col-md-4 separacionVerticalMin proye">
-						<a class="thumbnail" href="{{ proye.link }}" target="_blank">
-							{% thumbnail proye.imagen "694x418" crop="center" as im %}
-					      <img src="{{ im.url }}" alt="...">
-					      	{% endthumbnail %}
-		
-					      <div class="caption">
-					        <h4 class="titulo">{{ proye.titulo }}</h4>
-					        <p class="expe-lugar">{{ proye.fecha|date:"M Y" }}</p>
-							<div class="desc">
-								<p class="expe-fecha">{{ proye.tecnologias }}</p>
-								{{ proye.descripcion }}
-							</div>
-						    </div>
-					    </a>
 					</div>
 					{% endfor %}
 				</div>
