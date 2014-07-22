@@ -37,16 +37,10 @@ function sameHeight($object, win){
 	    	if(cur > maxHeight)
 	    		maxHeight = cur;
 	    });
-	    $object.each( function(){
-			$( this ).height(maxHeight)
-	    });
-	    console.log("1");
+	    $object.each( function(){ $( this ).height(maxHeight)});
 	}
 	else
 	{
-		$object.each( function(){
-			$( this ).height('initial')
-		});
-		console.log("0");
+		$object.each( function(){ $( this ).height('initial')});
 	}
 }
