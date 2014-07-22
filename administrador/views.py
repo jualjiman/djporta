@@ -20,3 +20,6 @@ def proyectos(request):
 	proyes = Proyecto.objects.all().order_by("-fecha")
 	
 	return render(request,"proyectos.html",{"proyes":proyes,})
+
+def contactame(request):
+	return render(request,"contactame.html",{})
