@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/icomoon/icomoon.eot?-q3c8jz');
-	src:url('../fonts/icomoon/icomoon.eot?#iefix-q3c8jz') format('embedded-opentype'),
-		url('../fonts/icomoon/icomoon.woff?-q3c8jz') format('woff'),
-		url('../fonts/icomoon/icomoon.ttf?-q3c8jz') format('truetype'),
-		url('../fonts/icomoon/icomoon.svg?-q3c8jz#icomoon') format('svg');
+	src:url('../fonts/icomoon/icomoon.eot?d2esgp');
+	src:url('../fonts/icomoon/icomoon.eot?#iefixd2esgp') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.woff?d2esgp') format('woff'),
+		url('../fonts/icomoon/icomoon.ttf?d2esgp') format('truetype'),
+		url('../fonts/icomoon/icomoon.svg?d2esgp#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -34,6 +34,9 @@
 .icon-award:before {
 	content: "\e600";
 }
+.icon-contact:before {
+	content: "\e603";
+}
 .icon-github:before {
 	content: "\e606";
 }
@@ -45,9 +48,6 @@
 }
 .icon-download:before {
 	content: "\e605";
-}
-.icon-contact:before {
-	content: "\e603";
 }
 .icon-studies:before {
 	content: "\e604";
