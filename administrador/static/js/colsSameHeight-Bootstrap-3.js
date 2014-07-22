@@ -18,12 +18,8 @@ function setObjects(){
 	//current windows size
 	var win = $(window).width();
 
-	console.log(win + " - " + sm);
-	if(win > sm){
-		console.log("si");
-		for(var i = 0; i < objects.length; i++)
-			sameHeight(objects[i],win);
-	}
+	for(var i = 0; i < objects.length; i++)
+		sameHeight(objects[i],win);
 }
 
 function sameHeight($object, win){
@@ -31,16 +27,23 @@ function sameHeight($object, win){
 	var objSize = $object.size();
 	// var init = 0, fin = objSize;
 
-	// iterando los objectos
-	// $object.slice(init,fin).each( function(){
-	$object.each( function(){
-		$( this ).height('initial')
-		cur = $( this ).height();
-    	if(cur > maxHeight)
-    		maxHeight = cur;
-    });
-    $object.each( function(){
-		$( this ).height(maxHeight)
-    });
-	
+	if(win > sm){
+		// iterando los objectos
+		// $object.slice(init,fin).each( function(){
+		$object.each( function(){
+			$( this ).height('initial')
+			cur = $( this ).height();
+	    	if(cur > maxHeight)
+	    		maxHeight = cur;
+	    });
+	    $object.each( function(){
+			$( this ).height(maxHeight)
+	    });
+	}
+	else
+	{
+		$object.each( function(){
+			$( this ).height('initial')
+		}
+	}
 }
