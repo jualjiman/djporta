@@ -1,5 +1,5 @@
 // media queries sizes?
-//var sm = 768, md = 992, lg = 1200;
+var sm = 768, md = 992, lg = 1200;
 
 $(document).ready(function(){
 
