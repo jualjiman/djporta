@@ -37,9 +37,9 @@
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
 			        <li><a href="/"><span class="icon-information"></span>Información</a></li>
-			        <li class="active"><a href="/estudios"><span class="icon-studies"></span>Estudios</a></li>
+			        <li><a href="/estudios"><span class="icon-studies"></span>Estudios</a></li>
 			        <li><a href="/proyectos"><span class="icon-projects"></span>Proyectos</a></li>
-			        <li><a href="/contactame"><span class="icon-contact"></span>Contactame</a></li>
+			        <li class="active"><a href="/contactame"><span class="icon-contact"></span>Contactame</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
@@ -53,25 +53,30 @@
 		<img src="/static/images/loading.gif">
 	</section>
 	<section id="mainContent">
-		<div class="container-fluid">
-			<div class="container separacionVertical">
-			<h3 class="text-center tituloPrincipal">Estudios y cursos</h3>
-				<div class="row">
-					{%for estu in estus%}
-					<div class="col-sm-6 col-md-4 separacionVerticalMin pRelative curs">
-						<h4 class="titulo">{{ estu.nombre }}<span class="subtitulo">{{estu.titulo}}</span></h4>
-						<p class="expe-lugar">{{ estu.lugar }}</p>
-						<div class="desc">
-						<p class="expe-fecha">{{ estu.fecha|date:"M Y" }}</p>
-						{{estu.descripcion}}</div>
-						{% if estu.completado == True %}
-							<span class="icon-award" title="Teminado"></span>
-						{% endif %}
-					</div>
-					{% endfor %}
-				</div>
-			</div>
-		</div>
+		<div class="container padding-bottom">
+	    	<h3 class="text-center tituloPrincipal">Contáctame</h3>
+	    	<p class="text-center tituloPrincipal">Qué necesitas? envíame un mensaje</p>
+	    	<form role="form">
+	    		<p id="contact-answ" class="bg-info"></p> 
+	    		
+	    		<div class="row">
+			  		<div class="col-sm-6 form-group">
+			    		<label for="tfName">Nombre</label>
+			    		<input type="text" class="form-control" id="tfName" placeholder="¿Cuál es tu nombre?">
+			  		</div>
+			  		<div class="col-sm-6 form-group">
+			    		<label for="tfEmail">Email</label>
+			    		<input type="email" class="form-control" id="tfEmail" placeholder="¿Cuál es tu email?">
+			  		</div>
+			  		<div class="col-xs-12 padding-bottom">
+			  			<textarea placeholder="¿En qué te puedo ayudar?" id="tfDescription" class="form-control"></textarea>
+			  		</div>
+			  		<div class="col-md-12">
+			  			<button id="btnSend" type="submit" class="btn btn-primary pull-right">Enviar</button>
+			  		</div>
+			  	</div>
+			</form>
+	    </div>
 	</section>
 	<footer>
 		<p id="footer_titulo">
