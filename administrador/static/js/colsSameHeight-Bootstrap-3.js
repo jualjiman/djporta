@@ -28,6 +28,7 @@ function sameHeight($object, win){
 	// var init = 0, fin = objSize;
 
 	if(win > sm){
+		
 		// iterando los objectos
 		// $object.slice(init,fin).each( function(){
 		$object.each( function(){
@@ -39,11 +40,13 @@ function sameHeight($object, win){
 	    $object.each( function(){
 			$( this ).height(maxHeight)
 	    });
+	    console.log("1");
 	}
 	else
 	{
 		$object.each( function(){
 			$( this ).height('initial')
 		}
+		console.log("0");
 	}
 }
