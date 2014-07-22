@@ -46,7 +46,7 @@ function sameHeight($object, win){
 	{
 		$object.each( function(){
 			$( this ).height('initial')
-		}
+		});
 		console.log("0");
 	}
 }
