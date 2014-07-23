@@ -34,13 +34,13 @@ $(document).ready(function(){
             $('.alert-warning').text('Todos los campos son requeridos').hide().fadeIn();
         }
     });
-
-	function ocultarPanelesDeEstado(){
-		$('.alert-info').hide();
-		$('.alert-danger').hide();
-		$('.alert-warning').hide();
-	}
 });
+
+function ocultarPanelesDeEstado(){
+	$('.alert-info').hide();
+	$('.alert-danger').hide();
+	$('.alert-warning').hide();
+}
 
 
 // $(document).on("click",".btnnb",function(e){
