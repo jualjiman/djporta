@@ -202,30 +202,23 @@ footer
 				&:hover
 				&:focus
 					color darkcolor
+.btn-primary 
+	color color
+	background-color white 
+	border-color color
+	transition all 0.5s ease
 
-// .btn-primary.active
-// 		color color
-// 		font-size 14px
-// 		font-weight bold
-// 		border solid 1px color
-// 		border-radius 5px
-// 		background cwhite
-// .btn-primary
-// 	transition all 0.5s ease
-// 	color cwhite
-// 	font-size 14px
-// 	font-weight bold
-// 	transition all 0.5s ease
-// 	border solid 1px color
-// 	border-radius 5px
-// 	backgroundcolor color
-// 	font-family 'Open Sans', sans-serif
+.btn-primary.active
+	color cwhite
+	border solid 1px darkcolor
+	background color
 
-// 	&:hover 
-// 	&:focus 
-// 	&:active
-// 		@extend .btn-primary.active
-// .open 
-// 	> .dropdown-toggle.btn-primary
-// 		@extend .btn-primary.active
+.btn-primary
+	&:hover 
+	&:focus 
+	&:active
+		@extend .btn-primary.active
+.open 
+	> .dropdown-toggle.btn-primary
+		@extend .btn-primary.active
 		
