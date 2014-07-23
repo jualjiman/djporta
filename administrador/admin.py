@@ -7,7 +7,7 @@ class InfoGralAdmin(admin.ModelAdmin):
 	list_display = ('campo','info','categoria','prioridad')
 
 class ExpProAdmin(admin.ModelAdmin):
-	list_display = ('puesto','lugar','desde','hasta')
+	list_display = ('puesto','lugar','desde','hasta','actual')
 
 class EstAdmin(admin.ModelAdmin):
 	list_display = ('titulo','nombre','lugar','completado','fecha')
