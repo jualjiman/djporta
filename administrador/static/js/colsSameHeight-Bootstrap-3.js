@@ -8,7 +8,8 @@ $(document).ready(function(){
 
 	//listen resize
 	$(window).on('resize', function() {
-		setObjects();
+		setTimeout(setObjects, 500);
+		
 	});
 });
 
@@ -37,7 +38,6 @@ function sameHeight($object, win){
 	    	if(cur > maxHeight)
 	    		maxHeight = cur;
 	    });
-	    $object.each( function(){ $( this ).height(maxHeight)});
 	    $object.each( function(){ $( this ).height(maxHeight)});
 	}
 	else
