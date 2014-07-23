@@ -1,8 +1,8 @@
  @import "fonts.css"
 
-green = #0395a6; //#03a679
-darkgreen = darken(green,20%)
-darkergreen = darken(green,40%)
+color = #0395a6; //green#03a679
+darkcolor = darken(color,20%)
+darkercolor = darken(color,40%)
 
 grisclaro = #FAFAFA
 gris = #eeeeee
@@ -19,8 +19,8 @@ cyellow	= #F6B322
 	font-family 'Open Sans', sans-serif
 
 header
-	background green
-	border-bottom: solid 4px darkgreen
+	background color
+	border-bottom: solid 4px darkcolor
 	position relative
 
 hr 
@@ -53,11 +53,11 @@ hr
 
 .icon-github,
 .icon-download
-	color green
+	color color
 	position absolute
 	bottom -23px
 	font-size 30px
-	border solid 2px darkgreen
+	border solid 2px darkcolor
 	border-radius 50%
 	width 45px
 	height 45px
@@ -128,7 +128,7 @@ hr
 .expe-lugar
 	display	inline-block
 	margin-left	10px
-	color green
+	color color
 	font-size 16px
 
 .proyl
@@ -142,14 +142,14 @@ a.thumbnail
 		&:hover
 		&:focus
 		&:active
-			border-color green
+			border-color color
 			text-decoration none
 			cursor pointer
 .jumbotron
 	border-bottom solid 1px grisobscuro
 
 .tituloPrincipal
-	color green
+	color color
 	font-weight 600
 
 .fondoObscuro
@@ -157,7 +157,7 @@ a.thumbnail
 	border-top solid 1px gris
 	border-bottom solid 1px gris
 footer
-	border-top solid 5px darkergreen
+	border-top solid 5px darkercolor
 	background cblack
 	height 160px
 
@@ -175,13 +175,6 @@ footer
 //@media (min-width: 768px) and (max-width: 991px)
 //@media (min-width: 992px)
 
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus,
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-	color darkgreen
-}
 
 #loading
 	img
@@ -191,3 +184,38 @@ footer
 
 // ----------------------BOOTSTRAP ROW SAME HEIGHT FIX--------------------------
 
+// .navbar-default .navbar-nav > li > a:focus,
+// .navbar-default .navbar-nav > .active > a,
+// .navbar-default .navbar-nav > .active > a:hover,
+// .navbar-default .navbar-nav > .active > a:focus
+
+.navbar-default 
+	.navbar-nav 
+		> li
+			> a
+				&:focus
+					color darkcolor
+		> .active
+			> a
+				color darkcolor
+
+				&:hover
+				&:focus
+					color darkcolor
+
+.btn-primary.active
+		color darkcolor
+		font-size 14px
+		font-weight bold
+		transition all 0.5s ease
+		border solid 1px darkcolor
+		border-radius 5px
+.btn-primary
+	&:hover 
+	&:focus 
+	&:active
+		@extend .btn-primary.active
+.open 
+	> .dropdown-toggle.btn-primary
+		@extend .btn-primary.active
+		
