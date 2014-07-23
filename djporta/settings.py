@@ -25,7 +25,7 @@ SECRET_KEY = '9%cucr(gc&t15fe#pj#m%96-$1wj(**9s7j$*@!o=c07)ijcc*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = [".jualjiman.com",".jualjiman.com."]
 
@@ -82,7 +82,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'es-mx'
 
-TIME_ZONE = 'CDT'
+TIME_ZONE = 'America/Mexico_City'
 
 USE_I18N = True
 
