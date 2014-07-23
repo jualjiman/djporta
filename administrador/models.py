@@ -67,4 +67,4 @@ class Mensaje(models.Model):
 	nombre = models.CharField(max_length=100)
 	email = models.EmailField()
 	mensaje = models.TextField()
-	fecha = models.DateTime(default=datetime.now(),editable=False)
+	fecha = models.DateTimeField(default=datetime.now(),editable=False)
