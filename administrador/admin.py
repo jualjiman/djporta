@@ -20,7 +20,11 @@ class ProyeAdmin(admin.ModelAdmin):
 
 	imagen_proyecto.allow_tags = True
 
+class MensAdmin(admin.ModelAdmin):
+	list_display = ('nombre','email','mensaje','fecha')
+
 admin.site.register(InformacionGeneral,InfoGralAdmin)
 admin.site.register(ExperienciaProfesional,ExpProAdmin)
 admin.site.register(Estudio,EstAdmin)
 admin.site.register(Proyecto,ProyeAdmin)
+admin.site.register(Mensaje,MensAdmin)
