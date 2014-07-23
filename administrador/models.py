@@ -1,7 +1,7 @@
  # -*- coding: utf-8 -*-
 from django.db import models
 from sorl.thumbnail import ImageField
-from datetime import date
+from datetime import date, datetime
 
 # Create your models here.
 
@@ -62,3 +62,9 @@ class Proyecto(models.Model):
 
 	def __str__(self):
 		return self.titulo
+
+class Mensaje(models.Model):
+	nombre = models.CharField(max_length=100)
+	email = models.EmailField()
+	mensaje = models.TextField()
+	fecha = models.DateTime(default=datetime.now(),editable=False)

@@ -22,4 +22,5 @@ def proyectos(request):
 	return render(request,"proyectos.html",{"proyes":proyes,})
 
 def contactame(request):
+	form = ContactForm()
 	return render(request,"contactame.html",{})

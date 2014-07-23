@@ -57,18 +57,25 @@
 			<div class="container separacionVertical">
 				<h3 class="text-center tituloPrincipal">Contactame</h3>
 		    	<form role="form">
-		    		<p id="contact-answ" class="bg-info"></p> 
+		    		{% csrf_token %}
+		    		<div class="alert alert-info" role="alert"></div>
+		    		<div class="alert alert-danger" role="alert">
+		    			{{ form.non_field_errors}}
+		    		</div> 
 		    		<div class="row">
 				  		<div class="col-sm-6 form-group">
-				    		<label for="tfName">Nombre</label>
-				    		<input type="text" class="form-control" id="tfName" placeholder="¿Cuál es tu nombre?">
+				    		<label for="id_nombre">Nombre</label>
+				    		{{ form.nombre.errors }}
+                            {{ form.nombre }}
 				  		</div>
 				  		<div class="col-sm-6 form-group">
-				    		<label for="tfEmail">Email</label>
-				    		<input type="email" class="form-control" id="tfEmail" placeholder="¿Cuál es tu email?">
+				    		<label for="id_email">Email</label>
+				    		{{ form.email.errors }}
+                            {{ form.email }}
 				  		</div>
 				  		<div class="col-xs-12 separacionVertical">
-				  			<textarea placeholder="¿En qué te puedo ayudar?" id="tfDescription" class="form-control"></textarea>
+				  			{{ form.mensaje.errors }}
+                            {{ form.mensaje }}
 				  		</div>
 				  		<div class="col-md-12">
 				  			<button id="btnSend" type="submit" class="btn btn-primary pull-right">Enviar</button>
