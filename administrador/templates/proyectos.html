@@ -61,7 +61,7 @@
 					{% for proye in proyes %}
 					<div class="col-sm-6 col-md-4 separacionVerticalMin proye">
 						{% if proye.link|length > 0 %}
-							<a class="thumbnail" href="{{ proye.link }}" target="_blank">
+							<a class="thumbnail pRelative" href="{{ proye.link }}" target="_blank">
 						{%else%}
 							<div class="thumbnail">
 						{% endif %}
@@ -78,6 +78,7 @@
 							</div>
 						    </div>
 						{% if proye.link|length > 0 %}
+							<span class="icon-link"></span>
 					    	</a>
 					    {%else%}
 					    	</div>
