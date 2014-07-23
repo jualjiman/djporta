@@ -1,8 +1,40 @@
 $(document).ready(function(){
 	$("#loading img").hide();
 	$("#mainContent").fadeIn();
+	
 	setObjects();
+
+    $("#btnSend").click(function(e){
+        e.preventDefault();
+
+         var name = $('#id_nombre').val();
+         var email = $('#id_email').val();
+         var message = $('#id_mensaje').val();
+
+        if( name !== "" && email !== "" && message !== ""){
+            $.ajax({
+                type: "POST",
+                url: "/contactoEmail/",  // or just url: "/my-url/path/"
+                data: {
+                    csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
+                    name: name,
+                    email: email,
+                    message: message
+                },
+                success: function(data) {
+                    $('.alert-info').text('Mensaje enviado, en breve le atenderemos.').hide().fadeIn();
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    $('.alert-danger').text('Error al enviar el mensaje.').hide().fadeIn();
+                }
+            });
+        }
+        else{
+            $('.alert-warning').text('Todos los campos son requeridos').hide().fadeIn();
+        }
+    });
 });
+
 
 // $(document).on("click",".btnnb",function(e){
 // 	var clss = $(this).attr("class");

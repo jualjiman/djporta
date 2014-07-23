@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from .models import *
 from .forms import *
@@ -22,6 +23,21 @@ def proyectos(request):
 	
 	return render(request,"proyectos.html",{"proyes":proyes,})
 
+"""
+siempre estar pendiente de colocar el form como las variables que le pasas al template 
+tambien de colocar la linea de encoding para utf8 en cada lugar donde vayas a usar acentos o caracteres epeciales
+importar el form 
+"""
 def contactame(request):
-	form = ContactForm()
-	return render(request,"contactame.html",{"form": form})
+	if request.is_ajax():
+	    nombre = request.POST['name']
+	    email = request.POST['email']
+	    mensaje = request.POST['message']
+
+	    msj = Mensaje(nombre=nombre, email=email,mensaje=mensaje)
+	    msj.save()
+
+	    return HttpResponse('Ok')
+	else:
+		form = ContactForm()
+		return render(request,"contactame.html",{"form": form})
