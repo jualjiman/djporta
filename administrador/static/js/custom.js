@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$("#loading img").hide();
 	$("#mainContent").fadeIn();
 	
-	setObjects();
+	startFix();
 
     $("#btnSend").click(function(e){
         e.preventDefault();
