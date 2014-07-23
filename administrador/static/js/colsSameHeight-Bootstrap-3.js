@@ -1,5 +1,6 @@
 // media queries sizes?
 var sm = 768, md = 992, lg = 1200;
+var delay = 100;//milisecconds
 
 $(document).ready(function(){
 
@@ -8,10 +9,14 @@ $(document).ready(function(){
 
 	//listen resize
 	$(window).on('resize', function() {
-		setTimeout(setObjects, 500);
+		startFix();
 		
 	});
 });
+
+function startFix(){
+	setTimeout(setObjects,delay);
+}
 
 function setObjects(){
 	// specific selectors to cols (class) to fix
