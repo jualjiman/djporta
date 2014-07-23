@@ -887,10 +887,10 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333333;
+  color: #747474;
   background-color: #ffffff;
 }
 input,
@@ -2715,7 +2715,7 @@ select[multiple].input-lg {
   vertical-align: middle;
   cursor: pointer;
   background-image: none;
-  border: 2px solid;
+  border: 1px solid;
   white-space: nowrap;
   padding: 10px 14px;
   font-size: 14px;
