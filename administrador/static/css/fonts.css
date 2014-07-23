@@ -26,7 +26,8 @@
 .icon-studies:before,
 .icon-projects,
 .icon-information:before,
-.icon-contact:before{
+.icon-contact:before,
+.icon-send:before{
 	padding-right: 5px;
 	font-size: 16px;
 }
