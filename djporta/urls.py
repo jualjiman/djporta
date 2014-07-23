@@ -17,12 +17,12 @@ urlpatterns = patterns('',
     url(r'^contactame/$', 'administrador.views.contactame', name='contactame'),
 )
 
-urlpatterns += patterns('',
-	url(r'^var/www/djporta/media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),)
+# urlpatterns += patterns('',
+# 	url(r'^var/www/djporta/media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),)
 
-if settings.DEBUG:
-    urlpatterns += patterns('',
-             (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT, 'show_indexes':True}),)
+# if settings.DEBUG:
+#     urlpatterns += patterns('',
+#              (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT, 'show_indexes':True}),)
 
-    urlpatterns += patterns('',
-            (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes':True}),)
+#     urlpatterns += patterns('',
+#             (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes':True}),)

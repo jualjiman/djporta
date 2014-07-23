@@ -14,7 +14,7 @@ $(document).ready(function(){
         if( name !== "" && email !== "" && message !== ""){
             $.ajax({
                 type: "POST",
-                url: "/contactoEmail/",  // or just url: "/my-url/path/"
+                url: "/contactame/",  // or just url: "/my-url/path/"
                 data: {
                     csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
                     name: name,
@@ -22,7 +22,7 @@ $(document).ready(function(){
                     message: message
                 },
                 success: function(data) {
-                    $('.alert-info').text('Mensaje enviado, en breve le atenderemos.').hide().fadeIn();
+                    $('.alert-info').text('Mensaje enviado, Muchas gracias!').hide().fadeIn();
                 },
                 error: function(xhr, textStatus, errorThrown) {
                     $('.alert-danger').text('Error al enviar el mensaje.').hide().fadeIn();
