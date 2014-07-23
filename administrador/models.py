@@ -34,6 +34,7 @@ class ExperienciaProfesional(models.Model):
 	desde = models.DateField(default = date.today)
 	hasta = models.DateField(default = date.today, blank = True, null = True)
 	info = models.TextField(blank=True)
+	actual = models.BooleanField(default=False)
 
 	def __unicode__(self): # __str__(self):
 		return self.puesto

@@ -102,7 +102,7 @@
 			<h3 class="text-center tituloPrincipal">Experiencia profesional</h3>
 				<div class="row">
 					{%for exp in exps%}
-					<div class="col-sm-6 col-md-4 separacionVerticalMin expe">
+					<div class="col-sm-6 col-md-4 separacionVerticalMin pRelative expe">
 						<h4 class="titulo">{{ exp.puesto }}</h4>
 						<p class="expe-lugar">{{ exp.lugar }}</p>
 						<div class="desc">
@@ -112,7 +112,11 @@
 								- {{ exp.hasta|date:"M Y" }}
 							{% endif %}
 						</p>
-						{{ exp.info }}</div>
+						{{ exp.info }}
+						</div>
+						{% if exp.actual == True %}
+							<span class="icon-work" title="Teminado"></span>
+						{% endif %}
 					</div>
 					{% endfor %}
 				</div>
