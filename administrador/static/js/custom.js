@@ -25,7 +25,7 @@ $(document).ready(function(){
                     $('.alert-info').text('Mensaje enviado, Muchas gracias!').hide().fadeIn();
                 },
                 error: function(xhr, textStatus, errorThrown) {
-                    $('.alert-danger').text('Error al enviar el mensaje.').hide().fadeIn();
+                    $('.alert-danger').text(errorThrown).hide().fadeIn();
                 }
             });
         }
