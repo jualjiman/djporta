@@ -6,6 +6,7 @@ $(document).ready(function(){
 
     $("#btnSend").click(function(e){
         e.preventDefault();
+        ocultarPanelesDeEstado();
 
          var name = $('#id_nombre').val();
          var email = $('#id_email').val();
@@ -14,8 +15,8 @@ $(document).ready(function(){
         if( name !== "" && email !== "" && message !== ""){
             $.ajax({
                 type: "POST",
-                url: "/contactame/",  // or just url: "/my-url/path/"
-                data: {
+                url: "/contactame",  // or just url: "/my-url/path/"
+                data: {								    
                     csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
                     name: name,
                     email: email,
@@ -25,7 +26,7 @@ $(document).ready(function(){
                     $('.alert-info').text('Mensaje enviado, Muchas gracias!').hide().fadeIn();
                 },
                 error: function(xhr, textStatus, errorThrown) {
-                    $('.alert-danger').text(errorThrown + textStatus).hide().fadeIn();
+                    $('.alert-danger').text("Ups! Algo fallo, por favor intente más tarde").hide().fadeIn();
                 }
             });
         }
@@ -33,6 +34,12 @@ $(document).ready(function(){
             $('.alert-warning').text('Todos los campos son requeridos').hide().fadeIn();
         }
     });
+
+	function ocultarPanelesDeEstado(){
+		$('.alert-info').hide();
+		$('.alert-danger').hide();
+		$('.alert-warning').hide();
+	}
 });
 
 
