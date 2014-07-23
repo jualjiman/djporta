@@ -1257,7 +1257,7 @@ dd {
     margin-left: 180px;
   }
   .navbar-default .navbar-nav > li > a {
-    border: solid 1px #e7e7e7;
+    border: solid 2px #e7e7e7;
     border-radius: 5px;  
   }
 }
@@ -2715,7 +2715,7 @@ select[multiple].input-lg {
   vertical-align: middle;
   cursor: pointer;
   background-image: none;
-  border: 1px solid;
+  border: 2px solid;
   white-space: nowrap;
   padding: 10px 14px;
   font-size: 14px;
