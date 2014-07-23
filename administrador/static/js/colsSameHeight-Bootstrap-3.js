@@ -38,6 +38,7 @@ function sameHeight($object, win){
 	    		maxHeight = cur;
 	    });
 	    $object.each( function(){ $( this ).height(maxHeight)});
+	    $object.each( function(){ $( this ).height(maxHeight)});
 	}
 	else
 	{
