@@ -2715,7 +2715,7 @@ select[multiple].input-lg {
   vertical-align: middle;
   cursor: pointer;
   background-image: none;
-  /*border: 1px solid transparent;*/
+  border: 1px solid;
   white-space: nowrap;
   padding: 10px 14px;
   font-size: 14px;
@@ -2735,7 +2735,7 @@ select[multiple].input-lg {
 }
 .btn:hover,
 .btn:focus {
-  color: #333333;
+  /*color: #333333;*/
   text-decoration: none;
 }
 .btn:active,
