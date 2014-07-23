@@ -68,3 +68,6 @@ class Mensaje(models.Model):
 	email = models.EmailField()
 	mensaje = models.TextField()
 	fecha = models.DateTimeField(default=datetime.now(),editable=False)
+
+	def __str__(self):
+		return self.nombre

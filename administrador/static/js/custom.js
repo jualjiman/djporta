@@ -6,7 +6,6 @@ $(document).ready(function(){
 
     $("#btnSend").click(function(e){
         e.preventDefault();
-        ocultarPanelesDeEstado();
 
          var name = $('#id_nombre').val();
          var email = $('#id_email').val();
@@ -23,24 +22,22 @@ $(document).ready(function(){
                     message: message
                 },
                 success: function(data) {
+                	$('.alert-info').hide();
+					$('.alert-danger').hide();
+					$('.alert-warning').hide();
                     $('.alert-info').text('Mensaje enviado, Muchas gracias!').hide().fadeIn();
                 },
                 error: function(xhr, textStatus, errorThrown) {
                     $('.alert-danger').text("Ups! Algo fallo, por favor intente más tarde").hide().fadeIn();
                 }
             });
+
         }
         else{
             $('.alert-warning').text('Todos los campos son requeridos').hide().fadeIn();
         }
     });
 });
-
-function ocultarPanelesDeEstado(){
-	$('.alert-info').hide();
-	$('.alert-danger').hide();
-	$('.alert-warning').hide();
-}
 
 
 // $(document).on("click",".btnnb",function(e){
