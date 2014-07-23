@@ -6,7 +6,7 @@ $(document).ready(function(){
 
     $("#btnSend").click(function(e){
         e.preventDefault();
-
+        ocultandoInfo();
          var name = $('#id_nombre').val();
          var email = $('#id_email').val();
          var message = $('#id_mensaje').val();
@@ -22,6 +22,7 @@ $(document).ready(function(){
                     message: message
                 },
                 success: function(data) {
+                	limpiandoFormulario();
                     $('.alert-info').text('Mensaje enviado, Muchas gracias!').hide().fadeIn();
                 },
                 error: function(xhr, textStatus, errorThrown) {
@@ -35,6 +36,18 @@ $(document).ready(function(){
         }
     });
 });
+
+function ocultandoInfo(){
+	$('.alert-info').hide();
+	$('.alert-danger').hide();
+	$('.alert-warning').hide();
+}
+
+function limpiandoFormulario(){
+	$('#id_nombre').val("");
+    $('#id_email').val("");
+    $('#id_mensaje').val("");
+}
 
 
 // $(document).on("click",".btnnb",function(e){
