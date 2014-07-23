@@ -58,15 +58,20 @@
 			<h3 class="text-center tituloPrincipal">Estudios y cursos</h3>
 				<div class="row">
 					{%for estu in estus%}
-					<div class="col-sm-6 col-md-4 separacionVerticalMin pRelative curs">
-						<h4 class="titulo">{{ estu.nombre }}<span class="subtitulo">{{estu.titulo}}</span></h4>
+					<div class="col-sm-6 col-md-4 separacionVerticalMin curs">
+						<h4 class="titulo pRelative">
+							{{ estu.nombre }}
+							<span class="subtitulo">
+								{{estu.titulo}}
+							</span>
+							{% if estu.completado == True %}
+								<span class="icon-award" title="Teminado"></span>
+							{% endif %}
+						</h4>
 						<p class="expe-lugar">{{ estu.lugar }}</p>
 						<div class="desc">
 						<p class="expe-fecha">{{ estu.fecha|date:"M Y" }}</p>
 						{{estu.descripcion}}</div>
-						{% if estu.completado == True %}
-							<span class="icon-award" title="Teminado"></span>
-						{% endif %}
 					</div>
 					{% endfor %}
 				</div>
