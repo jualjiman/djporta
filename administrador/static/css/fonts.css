@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/icomoon/icomoon.eot?p1lo6m');
-	src:url('../fonts/icomoon/icomoon.eot?#iefixp1lo6m') format('embedded-opentype'),
-		url('../fonts/icomoon/icomoon.woff?p1lo6m') format('woff'),
-		url('../fonts/icomoon/icomoon.ttf?p1lo6m') format('truetype'),
-		url('../fonts/icomoon/icomoon.svg?p1lo6m#icomoon') format('svg');
+	src:url('../fonts/icomoon/icomoon.eot?-dgj2sh');
+	src:url('../fonts/icomoon/icomoon.eot?#iefix-dgj2sh') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.woff?-dgj2sh') format('woff'),
+		url('../fonts/icomoon/icomoon.ttf?-dgj2sh') format('truetype'),
+		url('../fonts/icomoon/icomoon.svg?-dgj2sh#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -32,26 +32,29 @@
 }
 
 .icon-award:before {
-	content: "\e600";
-}
-.icon-contact:before {
-	content: "\e603";
-}
-.icon-github:before {
-	content: "\e606";
-}
-.icon-information:before {
-	content: "\e601";
-}
-.icon-projects:before {
-	content: "\e602";
-}
-.icon-download:before {
-	content: "\e605";
-}
-.icon-link:before {
 	content: "\e607";
 }
-.icon-studies:before {
+.icon-link:before {
+	content: "\e600";
+}
+.icon-projects:before {
+	content: "\e601";
+}
+.icon-download:before {
+	content: "\e602";
+}
+.icon-send:before {
+	content: "\e608";
+}
+.icon-github:before {
+	content: "\e603";
+}
+.icon-contact:before {
 	content: "\e604";
+}
+.icon-information:before {
+	content: "\e605";
+}
+.icon-studies:before {
+	content: "\e606";
 }
