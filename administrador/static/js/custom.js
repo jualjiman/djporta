@@ -10,25 +10,31 @@ $(document).ready(function(){
          var name = $('#id_nombre').val();
          var email = $('#id_email').val();
          var message = $('#id_mensaje').val();
+         var email_regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
         if( name !== "" && email !== "" && message !== ""){
-            $.ajax({
-                type: "POST",
-                url: "/contactame/",  // or just url: "/my-url/path/"
-                data: {								    
-                    csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
-                    name: name,
-                    email: email,
-                    message: message
-                },
-                success: function(data) {
-                	limpiandoFormulario();
-                    $('.alert-info').text('Mensaje enviado, Muchas gracias!').hide().fadeIn();
-                },
-                error: function(xhr, textStatus, errorThrown) {
-                    $('.alert-danger').text("Ups! Algo fallo, por favor intente más tarde").hide().fadeIn();
-                }
-            });
+            if( email_regex.test(email) === true ){
+                $.ajax({
+                    type: "POST",
+                    url: "/contactame/",  // or just url: "/my-url/path/"
+                    data: {								    
+                        csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
+                        name: name,
+                        email: email,
+                        message: message
+                    },
+                    success: function(data) {
+                    	limpiandoFormulario();
+                        $('.alert-info').text('Mensaje enviado, Muchas gracias!').hide().fadeIn();
+                    },
+                    error: function(xhr, textStatus, errorThrown) {
+                        $('.alert-danger').text("Ups! Algo fallo, por favor intente más tarde").hide().fadeIn();
+                    }
+                });
+            }
+            else{
+                $('.alert-warning').text('El formato de email que ingreso es invalido').hide().fadeIn();
+            }
 
         }
         else{
