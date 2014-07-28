@@ -22,7 +22,9 @@ function setObjects(){
 		obj = objects[i];
 		if($(obj).length > 0){
 			if(obj.lastIndexOf("-im") != -1){
+				console.log("0");
 				setTimeout(sameHeight($(obj),win),delay);
+				console.log("1");
 			}
 			else{
 				sameHeight($(obj),win);
@@ -52,10 +54,8 @@ function sameHeight($object, win){
 	    	if(min < cur)
 	    		nmin++;
 	    });
-	    console.log(nmin);
 	    $object.each( function(){ 
 	    	cur = $( this ).height();
-	    	console.log(cur);
 	    	if(cur <= min && nmin > 1){
 	    		$(this).height(min);
 	    	}
@@ -63,7 +63,6 @@ function sameHeight($object, win){
 	    		$(this).height(maxHeight);
 	    	}
 	    });
-	    console.log("-------------------------");
 	}
 	else
 	{
