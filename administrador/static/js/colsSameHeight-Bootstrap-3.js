@@ -19,7 +19,7 @@ function setObjects(){
 	// specific selectors to cols (class) to fix
 	var objects = [".gral",".tecn",".leng",".expe",".curs",".proye-im"];
 	//current windows size
-	var win = $(window).width();
+	win = $(window).width();
 	for(var i = 0; i < objects.length; i++){
 		obj = objects[i];
 		$obj = $(obj);
@@ -37,7 +37,7 @@ function sameHeight(){
 	console.log("done");
 	// var objSize = $obj.size();
 	// var init = 0, fin = objSize;
-
+	console.log(win);
 	if(win > sm){
 		console.log($obj);
 		// iterando los objectos
