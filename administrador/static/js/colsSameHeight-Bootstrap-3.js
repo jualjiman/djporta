@@ -52,6 +52,7 @@ function sameHeight($object, win){
 	    	if(cur <= min)
 	    		nmin++;
 	    });
+	    console.log(nmin);
 	    $object.each( function(){ 
 	    	cur = $( this ).height();
 	    	if(cur <= min && nmin > 1){
