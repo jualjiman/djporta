@@ -1,6 +1,6 @@
 // media queries sizes?
 var sm = 768, md = 992, lg = 1200;
-var delay = 1900;//milisecconds
+var delay = 19000;//milisecconds
 
 var $obj, win;
 
@@ -38,7 +38,7 @@ function setObjects(){
 function sameHeight($obj){
 	console.log("1");
 	var maxHeight = 0;
-	var objSize = $obj.size();
+	// var objSize = $obj.size();
 	// var init = 0, fin = objSize;
 
 	if(win > sm){
