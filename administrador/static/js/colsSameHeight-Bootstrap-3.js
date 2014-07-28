@@ -13,18 +13,22 @@ $(document).ready(function(){
 
 	//listen resize
 	$(window).on('resize', function() {
-		startFix();
+		setObjects();
 	});
 });
 
 function setObjects(){
 	// specific selectors to cols (class) to fix
-	var objects = [$(".gral"),$(".tecn"),$(".leng"),$(".expe"),$(".curs"),$(".proye")];
+	var objects = [".gral",".tecn",".leng",".expe",".curs",".proye-im"];
 	//current windows size
 	var win = $(window).width();
 
 	for(var i = 0; i < objects.length; i++)
-		sameHeight(objects[i],win);
+		obj = objects[i];
+		if(obj.lastIndexOf("-im") != -1)
+			sameHeight($(obj),win);
+		else
+			setTimeout(sameHeight($(obj),win),delay);
 }
 
 function sameHeight($object, win){
@@ -43,16 +47,15 @@ function sameHeight($object, win){
 	    		maxHeight = cur;
 	    });
 	    var min = (maxHeight*0.7);
-	    var nmin = 0, others;
+	    var nmin = 0;
 	    $object.each( function(){ 
 	    	if(cur <= min)
 	    		nmin++;
 	    	else
-	    		others++;
 	    });
 	    $object.each( function(){ 
 	    	cur = $( this ).height();
-	    	if(cur <= min && nmin > others){
+	    	if(cur <= min && nmin > 1){
 	    		$(this).height(min);
 	    	}
 	    	else{
