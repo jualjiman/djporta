@@ -25,9 +25,10 @@ function setObjects(){
 
 	for(var i = 0; i < objects.length; i++)
 		obj = objects[i];
-		if(obj.lastIndexOf("-im") != -1)
+		if(obj.lastIndexOf("-im") != -1){
 			sameHeight($(obj),win);
 			console.log("1-oth");
+		}
 		else{
 			setTimeout(sameHeight($(obj),win),delay);
 			console.log("1-im");
