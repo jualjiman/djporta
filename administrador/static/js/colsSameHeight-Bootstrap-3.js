@@ -23,6 +23,7 @@ function setObjects(){
 	for(var i = 0; i < objects.length; i++){
 		obj = objects[i];
 		$obj = $(obj);
+		console.log("SO" + $obj);
 		if($obj.length > 0){
 			if(obj.lastIndexOf("-im") != -1)
 				setTimeout(sameHeight,delay);
@@ -39,7 +40,7 @@ function sameHeight(){
 	// var init = 0, fin = objSize;
 
 	if(win > sm){
-		
+		console.log("mm" + $obj);
 		// iterando los objectos
 		// $obj.slice(init,fin).each( function(){
 		$obj.each( function(){
