@@ -23,7 +23,7 @@ function setObjects(){
 	//current windows size
 	var win = $(window).width();
 	console.log(objects.length);
-	for(var i = 0; i < objects.length; i++)
+	for(var i = 0; i < objects.length; i++){
 		obj = objects[i];
 		console.log(i);
 
@@ -37,6 +37,7 @@ function setObjects(){
 			console.log("1-oth");
 			console.log($(obj));
 		}
+	}
 
 		
 }
