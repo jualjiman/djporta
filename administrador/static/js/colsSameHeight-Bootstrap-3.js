@@ -20,7 +20,7 @@ function startFix(){
 
 function setObjects(){
 	// specific selectors to cols (class) to fix
-	var objects = [$(".gral"),$(".tecn"),$(".leng"),$(".expe"),$(".curs"),$(".proye")];
+	var objects = [$(".gral"),$(".tecn"),$(".leng"),$(".expe"),$(".curs")];
 	//current windows size
 	var win = $(window).width();
 

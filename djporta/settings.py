@@ -23,9 +23,9 @@ sys.setdefaultencoding('utf-8')
 SECRET_KEY = '9%cucr(gc&t15fe#pj#m%96-$1wj(**9s7j$*@!o=c07)ijcc*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = [".jualjiman.com",".jualjiman.com."]
 
