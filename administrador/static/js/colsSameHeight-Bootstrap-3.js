@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 function setObjects(){
 	// specific selectors to cols (class) to fix
-	var objects = [$(".gral"),$(".tecn"),$(".leng"),$(".expe"),$(".curs")];
+	var objects = [$(".gral"),$(".tecn"),$(".leng"),$(".expe"),$(".curs"),$(".proye")];
 	//current windows size
 	var win = $(window).width();
 
