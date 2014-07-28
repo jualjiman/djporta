@@ -25,7 +25,6 @@ function setObjects(){
 		$obj = $(obj);
 		if($obj.length > 0){
 			if(obj.lastIndexOf("-im") != -1){
-				console.log("0");
 				setTimeout(sameHeight,delay);
 			}
 			else{
@@ -35,8 +34,7 @@ function setObjects(){
 	}
 }
 
-function sameHeight($obj){
-	console.log("1");
+function sameHeight(){
 	var maxHeight = 0;
 	// var objSize = $obj.size();
 	// var init = 0, fin = objSize;
