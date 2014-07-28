@@ -28,13 +28,15 @@ function setObjects(){
 		if(obj.lastIndexOf("-im") != -1){
 			sameHeight($(obj),win);
 			console.log("1-oth");
+			console.log($(obj));
 		}
 		else{
 			setTimeout(sameHeight($(obj),win),delay);
 			console.log("1-im");
+			console.log($(obj));
 		}
 
-		console.log($(obj));
+		
 }
 
 function sameHeight($object, win){
