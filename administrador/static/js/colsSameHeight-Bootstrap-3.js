@@ -25,7 +25,7 @@ function setObjects(){
 	console.log(objects.length);
 	for(var i = 0; i < objects.length; i++)
 		obj = objects[i];
-		console.log(obj);
+		console.log(i);
 
 		if(obj.lastIndexOf("-im") != -1){
 			setTimeout(sameHeight($(obj),win),delay);
