@@ -34,12 +34,9 @@ function setObjects(){
 
 function sameHeight(){
 	var maxHeight = 0;
-	console.log("done");
 	// var objSize = $obj.size();
 	// var init = 0, fin = objSize;
-	console.log(win);
 	if(win > sm){
-		console.log($obj);
 		// iterando los objectos
 		// $obj.slice(init,fin).each( function(){
 		$obj.each( function(){
