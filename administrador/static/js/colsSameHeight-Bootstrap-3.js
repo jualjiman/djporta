@@ -1,6 +1,10 @@
 // media queries sizes?
 var sm = 768, md = 992, lg = 1200;
-var delay = 100;//milisecconds
+var delay = 1000;//milisecconds
+
+function startFix(){
+	setTimeout(setObjects,delay);
+}
 
 $(document).ready(function(){
 
@@ -10,13 +14,10 @@ $(document).ready(function(){
 	//listen resize
 	$(window).on('resize', function() {
 		startFix();
+		console.log("1");
 		
 	});
 });
-
-function startFix(){
-	setTimeout(setObjects,delay);
-}
 
 function setObjects(){
 	// specific selectors to cols (class) to fix
@@ -43,7 +44,16 @@ function sameHeight($object, win){
 	    	if(cur > maxHeight)
 	    		maxHeight = cur;
 	    });
-	    $object.each( function(){ $( this ).height(maxHeight)});
+	    var min = (maxHeight*0.8);
+	    $object.each( function(){ 
+	    	cur = $( this ).height();
+	    	if(cur <= min){
+	    		$(this).height(min);
+	    	}
+	    	else{
+	    		$(this).height(maxHeight);
+	    	}
+	    });
 	}
 	else
 	{
