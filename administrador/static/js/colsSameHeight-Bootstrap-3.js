@@ -55,6 +55,7 @@ function sameHeight($object, win){
 	    console.log(nmin);
 	    $object.each( function(){ 
 	    	cur = $( this ).height();
+	    	console.log(cur);
 	    	if(cur <= min && nmin > 1){
 	    		$(this).height(min);
 	    	}
@@ -62,6 +63,7 @@ function sameHeight($object, win){
 	    		$(this).height(maxHeight);
 	    	}
 	    });
+	    console.log("-------------------------");
 	}
 	else
 	{
