@@ -2,6 +2,8 @@
 var sm = 768, md = 992, lg = 1200;
 var delay = 1900;//milisecconds
 
+var $obj, win;
+
 $(document).ready(function(){
 
 	//start at begin currently starting at the document ready event of the custom
@@ -20,30 +22,30 @@ function setObjects(){
 	var win = $(window).width();
 	for(var i = 0; i < objects.length; i++){
 		obj = objects[i];
-		if($(obj).length > 0){
+		$obj = $(obj);
+		if($obj.length > 0){
 			if(obj.lastIndexOf("-im") != -1){
 				console.log("0");
-				setTimeout(sameHeight($(obj),win),delay);
-				
+				setTimeout(sameHeight,delay);
 			}
 			else{
-				sameHeight($(obj),win);
+				sameHeight();
 			}
 		}
 	}
 }
 
-function sameHeight($object, win){
+function sameHeight($obj){
 	console.log("1");
 	var maxHeight = 0;
-	var objSize = $object.size();
+	var objSize = $obj.size();
 	// var init = 0, fin = objSize;
 
 	if(win > sm){
 		
 		// iterando los objectos
-		// $object.slice(init,fin).each( function(){
-		$object.each( function(){
+		// $obj.slice(init,fin).each( function(){
+		$obj.each( function(){
 			$( this ).height('initial')
 			cur = $( this ).height();
 	    	if(cur > maxHeight)
@@ -51,11 +53,11 @@ function sameHeight($object, win){
 	    });
 	    var min = (maxHeight*0.8);
 	    var nmin = 0;
-	    $object.each( function(){ 
+	    $obj.each( function(){ 
 	    	if(min < cur)
 	    		nmin++;
 	    });
-	    $object.each( function(){ 
+	    $obj.each( function(){ 
 	    	cur = $( this ).height();
 	    	if(cur <= min && nmin > 1){
 	    		$(this).height(min);
@@ -67,6 +69,6 @@ function sameHeight($object, win){
 	}
 	else
 	{
-		$object.each( function(){ $( this ).height('initial')});
+		$obj.each( function(){ $( this ).height('initial')});
 	}
 }
