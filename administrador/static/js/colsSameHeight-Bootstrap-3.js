@@ -26,13 +26,13 @@ function setObjects(){
 	for(var i = 0; i < objects.length; i++)
 		obj = objects[i];
 		if(obj.lastIndexOf("-im") != -1){
-			sameHeight($(obj),win);
-			console.log("1-oth");
+			setTimeout(sameHeight($(obj),win),delay);
+			console.log("1-im");
 			console.log($(obj));
 		}
 		else{
-			setTimeout(sameHeight($(obj),win),delay);
-			console.log("1-im");
+			sameHeight($(obj),win);
+			console.log("1-oth");
 			console.log($(obj));
 		}
 
