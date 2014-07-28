@@ -26,16 +26,17 @@ function setObjects(){
 	for(var i = 0; i < objects.length; i++){
 		obj = objects[i];
 		console.log(i);
-
-		if(obj.lastIndexOf("-im") != -1){
-			setTimeout(sameHeight($(obj),win),delay);
-			console.log("1-im");
-			console.log($(obj));
-		}
-		else{
-			sameHeight($(obj),win);
-			console.log("1-oth");
-			console.log($(obj));
+		if($(obj).length > 0){
+			if(obj.lastIndexOf("-im") != -1){
+				setTimeout(sameHeight($(obj),win),delay);
+				console.log("1-im");
+				console.log($(obj));
+			}
+			else{
+				sameHeight($(obj),win);
+				console.log("1-oth");
+				console.log($(obj));
+			}
 		}
 	}
 
