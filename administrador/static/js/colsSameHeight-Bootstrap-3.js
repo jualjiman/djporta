@@ -1,8 +1,6 @@
 // media queries sizes?
 var sm = 768, md = 992, lg = 1200;
-var delay = 1900;//milisecconds
-
-var $obj, win;
+var delay = 19000;//milisecconds
 
 $(document).ready(function(){
 
@@ -22,30 +20,30 @@ function setObjects(){
 	var win = $(window).width();
 	for(var i = 0; i < objects.length; i++){
 		obj = objects[i];
-		$obj = $(obj);
-		if($obj.length > 0){
+		if($(obj).length > 0){
 			if(obj.lastIndexOf("-im") != -1){
 				console.log("0");
-				setTimeout(sameHeight,delay);
+				setTimeout(sameHeight($(obj),win),delay);
+				
 			}
 			else{
-				sameHeight();
+				sameHeight($(obj),win);
 			}
 		}
 	}
 }
 
-function sameHeight($obj){
+function sameHeight($object, win){
 	console.log("1");
 	var maxHeight = 0;
-	var objSize = $obj.size();
+	var objSize = $object.size();
 	// var init = 0, fin = objSize;
 
 	if(win > sm){
 		
 		// iterando los objectos
-		// $obj.slice(init,fin).each( function(){
-		$obj.each( function(){
+		// $object.slice(init,fin).each( function(){
+		$object.each( function(){
 			$( this ).height('initial')
 			cur = $( this ).height();
 	    	if(cur > maxHeight)
@@ -53,11 +51,11 @@ function sameHeight($obj){
 	    });
 	    var min = (maxHeight*0.8);
 	    var nmin = 0;
-	    $obj.each( function(){ 
+	    $object.each( function(){ 
 	    	if(min < cur)
 	    		nmin++;
 	    });
-	    $obj.each( function(){ 
+	    $object.each( function(){ 
 	    	cur = $( this ).height();
 	    	if(cur <= min && nmin > 1){
 	    		$(this).height(min);
@@ -69,6 +67,6 @@ function sameHeight($obj){
 	}
 	else
 	{
-		$obj.each( function(){ $( this ).height('initial')});
+		$object.each( function(){ $( this ).height('initial')});
 	}
 }
