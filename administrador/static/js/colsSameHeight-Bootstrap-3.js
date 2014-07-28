@@ -1,6 +1,6 @@
 // media queries sizes?
 var sm = 768, md = 992, lg = 1200;
-var delay = 900;//milisecconds
+var delay = 1900;//milisecconds
 
 $(document).ready(function(){
 
