@@ -1,6 +1,6 @@
 // media queries sizes?
 var sm = 768, md = 992, lg = 1200;
-var delay = 1000;//milisecconds
+var delay = 900;//milisecconds
 
 function startFix(){
 	setTimeout(setObjects,delay);
