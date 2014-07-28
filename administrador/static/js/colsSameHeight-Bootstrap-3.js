@@ -14,8 +14,6 @@ $(document).ready(function(){
 	//listen resize
 	$(window).on('resize', function() {
 		startFix();
-		console.log("1");
-		
 	});
 });
 
@@ -44,7 +42,7 @@ function sameHeight($object, win){
 	    	if(cur > maxHeight)
 	    		maxHeight = cur;
 	    });
-	    var min = (maxHeight*0.8);
+	    var min = (maxHeight*0.7);
 	    $object.each( function(){ 
 	    	cur = $( this ).height();
 	    	if(cur <= min){
