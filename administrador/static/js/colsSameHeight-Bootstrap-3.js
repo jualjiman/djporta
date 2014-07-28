@@ -49,7 +49,7 @@ function sameHeight($object, win){
 	    var min = (maxHeight*0.8);
 	    var nmin = 0;
 	    $object.each( function(){ 
-	    	if(cur <= min)
+	    	if(min < cur)
 	    		nmin++;
 	    });
 	    console.log(nmin);
