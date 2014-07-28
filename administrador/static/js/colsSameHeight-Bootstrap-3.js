@@ -1,6 +1,6 @@
 // media queries sizes?
 var sm = 768, md = 992, lg = 1200;
-var delay = 19000;//milisecconds
+var delay = 1300;//milisecconds
 
 var $obj, win;
 
@@ -24,18 +24,17 @@ function setObjects(){
 		obj = objects[i];
 		$obj = $(obj);
 		if($obj.length > 0){
-			if(obj.lastIndexOf("-im") != -1){
+			if(obj.lastIndexOf("-im") != -1)
 				setTimeout(sameHeight,delay);
-			}
-			else{
+			else
 				sameHeight();
-			}
 		}
 	}
 }
 
 function sameHeight(){
 	var maxHeight = 0;
+	console.log("done");
 	// var objSize = $obj.size();
 	// var init = 0, fin = objSize;
 
