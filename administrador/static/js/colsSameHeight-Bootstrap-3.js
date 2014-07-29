@@ -1,6 +1,8 @@
 // media queries sizes?
 var sm = 768, md = 992, lg = 1200;
-var delay = 100;//milisecconds
+var delay = 1300;//milisecconds
+
+var $obj, win;
 
 $(document).ready(function(){
 
@@ -9,44 +11,58 @@ $(document).ready(function(){
 
 	//listen resize
 	$(window).on('resize', function() {
-		startFix();
-		
+		setObjects();
 	});
 });
 
-function startFix(){
-	setTimeout(setObjects,delay);
-}
-
 function setObjects(){
 	// specific selectors to cols (class) to fix
-	var objects = [$(".gral"),$(".tecn"),$(".leng"),$(".expe"),$(".curs"),$(".proye")];
+	var objects = [".gral",".tecn",".leng",".expe",".curs",".proye-im"];
 	//current windows size
-	var win = $(window).width();
-
-	for(var i = 0; i < objects.length; i++)
-		sameHeight(objects[i],win);
+	win = $(window).width();
+	for(var i = 0; i < objects.length; i++){
+		obj = objects[i];
+		$obj = $(obj);
+		if($obj.length > 0){
+			if(obj.lastIndexOf("-im") != -1)
+				setTimeout(sameHeight,delay);
+			else
+				sameHeight();
+		}
+	}
 }
 
-function sameHeight($object, win){
+function sameHeight(){
 	var maxHeight = 0;
-	var objSize = $object.size();
+	// var objSize = $obj.size();
 	// var init = 0, fin = objSize;
-
 	if(win > sm){
-		
 		// iterando los objectos
-		// $object.slice(init,fin).each( function(){
-		$object.each( function(){
+		// $obj.slice(init,fin).each( function(){
+		$obj.each( function(){
 			$( this ).height('initial')
 			cur = $( this ).height();
 	    	if(cur > maxHeight)
 	    		maxHeight = cur;
 	    });
-	    $object.each( function(){ $( this ).height(maxHeight)});
+	    var min = (maxHeight*0.8);
+	    var nmin = 0;
+	    $obj.each( function(){ 
+	    	if(min < cur)
+	    		nmin++;
+	    });
+	    $obj.each( function(){ 
+	    	cur = $( this ).height();
+	    	if(cur <= min && nmin > 1){
+	    		$(this).height(min);
+	    	}
+	    	else{
+	    		$(this).height(maxHeight);
+	    	}
+	    });
 	}
 	else
 	{
-		$object.each( function(){ $( this ).height('initial')});
+		$obj.each( function(){ $( this ).height('initial')});
 	}
 }
