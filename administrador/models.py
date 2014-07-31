@@ -47,6 +47,7 @@ class Estudio(models.Model):
 	#fecha = models.CharField(max_length=50)
 	fecha = models.DateField(default = date.today)
 	lugar = models.CharField(max_length=50, blank=True)
+	link = models.URLField(blank=True)
 	completado = models.BooleanField(default=False)
 
 	def __unicode__(self): # __str__(self):
