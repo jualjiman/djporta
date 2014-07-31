@@ -68,13 +68,13 @@
 								<span class="icon-award" title="Teminado"></span>
 							{% endif %}
 						</h4>
-						{% if estu.link|length > 0 %}
-							<a class="expe-lugar">
+						{% if estu.LugarLink|length > 0 %}
+							<a class="expe-lugar" href="{{ estu.LugarLink }}">
 						{% else %}
 							<p class="expe-lugar">
 						{% endif %}
 							{{ estu.lugar }}
-						{% if estu.link|length > 0 %}
+						{% if estu.LugarLink|length > 0 %}
 							</a>
 						{% else %}
 							</p>
