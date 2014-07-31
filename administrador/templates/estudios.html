@@ -68,7 +68,18 @@
 								<span class="icon-award" title="Teminado"></span>
 							{% endif %}
 						</h4>
-						<p class="expe-lugar">{{ estu.lugar }}</p>
+						{% if estu.link|length > 0 %}
+							<a class="expe-lugar">
+						{% else %}
+							<p class="expe-lugar">
+						{% endif %}
+							{{ estu.lugar }}
+						{% if estu.link|length > 0 %}
+							</a>
+						{% else %}
+							</p>
+						{% endif %}
+
 						<div class="desc">
 						<p class="expe-fecha">{{ estu.fecha|date:"M Y" }}</p>
 						{{estu.descripcion}}</div>
