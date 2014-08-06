@@ -40,7 +40,7 @@ function getInfo(){
 	$obj.each( function(){
 		classes = $( this ).attr("class").split(" ");
 		for(var i = 0; i<classes.length;i++){
-			alert(classes[i]);
+			console.log(classes[i])
 		}
 
 	});
