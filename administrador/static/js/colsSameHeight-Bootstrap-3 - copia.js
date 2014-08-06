@@ -3,8 +3,6 @@ var sm = 768, md = 992, lg = 1200;
 var delay = 1300;//milisecconds
 
 var $obj, win;
-var elements = Array();
-var nelements = 0;
 
 $(document).ready(function(){
 
@@ -34,18 +32,6 @@ function setObjects(){
 	}
 }
 
-function getInfo(){
-	var xs,sm,md,lg;
-	var classes = "";
-	$obj.each( function(){
-		classes = $( this ).attr("class").split(" ");
-		for(var i = 0; i<classes.length;i++){
-			alert(classes[i]);
-		}
-
-	});
-}
-
 function sameHeight(){
 	var maxHeight = 0;
 	// var objSize = $obj.size();
@@ -53,7 +39,6 @@ function sameHeight(){
 	if(win > sm){
 		// iterando los objectos
 		// $obj.slice(init,fin).each( function(){
-		getInfo();
 		$obj.each( function(){
 			$( this ).height('initial')
 			cur = $( this ).height();
@@ -81,4 +66,3 @@ function sameHeight(){
 		$obj.each( function(){ $( this ).height('initial')});
 	}
 }
-
