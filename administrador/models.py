@@ -18,8 +18,8 @@ class InformacionGeneral(models.Model):
 	campo = models.CharField(max_length=60)
 	info = models.CharField(max_length=90)
 	categoria = models.CharField(max_length=2, choices=categorias)
-	
 	prioridad = models.IntegerField(default=1)
+	activo = models.BooleanField(default=True)
 
 	def __unicode__(self): # __str__(self):
 		return self.campo
@@ -35,6 +35,7 @@ class ExperienciaProfesional(models.Model):
 	hasta = models.DateField(default = date.today, blank = True, null = True)
 	info = models.TextField(blank=True)
 	actual = models.BooleanField(default=False)
+	activo = models.BooleanField(default=True)
 
 	def __unicode__(self): # __str__(self):
 		return self.puesto
@@ -49,6 +50,7 @@ class Estudio(models.Model):
 	lugar = models.CharField(max_length=50)
 	LugarLink = models.URLField(blank=True)
 	completado = models.BooleanField(default=False)
+	activo = models.BooleanField(default=True)
 
 	def __unicode__(self): # __str__(self):
 		return self.titulo
@@ -61,6 +63,7 @@ class Proyecto(models.Model):
 	fecha = models.DateField(default = date.today)
 	link = models.URLField(blank=True)
 	imagen = ImageField(upload_to="proyectos")
+	activo = models.BooleanField(default=True)
 
 	def __str__(self):
 		return self.titulo
