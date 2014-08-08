@@ -18,7 +18,7 @@ class EstAdmin(admin.ModelAdmin):
 
 class ProyeAdmin(admin.ModelAdmin):
 	list_display = ('titulo','descripcion','fecha', 'imagen_proyecto','activo',)
-	search_fields = ('titulo')
+	search_fields = ('titulo',)
 
 	def imagen_proyecto(self,obj):
 		return '<img src="%s" />' % get_thumbnail(obj.imagen,'100x60', crop='center').url #format='PNG', quality=99
