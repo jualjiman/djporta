@@ -4,16 +4,21 @@ from sorl.thumbnail.shortcuts import get_thumbnail
 
 # Register your models here.
 class InfoGralAdmin(admin.ModelAdmin):
-	list_display = ('campo','info','categoria','prioridad')
+	list_display = ('campo','info','categoria','prioridad','activo',)
+	search_fields = ('campo',)
+	list_filter = ('categoria',)
 
 class ExpProAdmin(admin.ModelAdmin):
-	list_display = ('puesto','lugar','desde','hasta','actual')
+	list_display = ('puesto','lugar','desde','hasta','actual','activo',)
+	search_fields = ('puesto','lugar',)
 
 class EstAdmin(admin.ModelAdmin):
-	list_display = ('titulo','nombre','lugar','completado','fecha')
+	list_display = ('titulo','nombre','lugar','completado','fecha','activo',)
+	search_fields = ('titulo','nombre','lugar',)
 
 class ProyeAdmin(admin.ModelAdmin):
-	list_display = ('titulo','descripcion','fecha', 'imagen_proyecto')
+	list_display = ('titulo','descripcion','fecha', 'imagen_proyecto','activo',)
+	search_fields = ('titulo')
 
 	def imagen_proyecto(self,obj):
 		return '<img src="%s" />' % get_thumbnail(obj.imagen,'100x60', crop='center').url #format='PNG', quality=99
