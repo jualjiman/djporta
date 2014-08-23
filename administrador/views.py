@@ -62,7 +62,7 @@ def messages(request):
 			nattachments += 1
         	# do something with the file
 		
-		msg = Email(sender=sender,recipient=recipent,subject=subject,body=body_without_quotes,nattachments=nattachments)
+		msg = Email(sender=sender,recipient=recipient,subject=subject,body=body_without_quotes,nattachments=nattachments)
 		msg.save()
     # Returned text is ignored but HTTP status code matters:
     # Mailgun wants to see 2xx, otherwise it will make another attempt in 5 minutes
