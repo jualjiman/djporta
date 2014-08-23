@@ -47,9 +47,9 @@ def contactame(request):
 @csrf_exempt
 def messages(request):
 	if request.method == 'POST':
-		sender    = request.POST.get('sender')
-		recipient = request.POST.get('recipient')
-		subject   = request.POST.get('subject', '')
+		sender    = request.POST.get('name')
+		recipient = request.POST.get('email')
+		subject   = request.POST.get('message', '')
 
 		body_plain = request.POST.get('body-plain', '')
 		body_without_quotes = request.POST.get('stripped-text', '')

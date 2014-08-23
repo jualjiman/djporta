@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     url(r'^$', 'administrador.views.home', name='home'),
     url(r'^estudios/$', 'administrador.views.estudios', name='estudios'),
     url(r'^proyectos/$', 'administrador.views.proyectos', name='proyectos'),
-    url(r'^contactame/$', 'administrador.views.contactame', name='contactame'),
+    url(r'^contactame/$', 'administrador.views.messages', name='messages'),
     url(r'^messages/$', 'administrador.views.messages', name='messages'),
 )
 
