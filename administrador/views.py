@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from .models import *
 from .forms import *
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def home(request):
