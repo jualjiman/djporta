@@ -4,6 +4,7 @@ from django.shortcuts import render
 from .models import *
 from .forms import *
 from django.views.decorators.csrf import csrf_exempt
+import requests
 
 # Create your views here.
 def home(request):
@@ -35,6 +36,7 @@ def contactame(request):
 	    email = request.POST['email']
 	    mensaje = request.POST['message']
 
+	    send_simple_message()
 	    msj = Mensaje(nombre=nombre, email=email,mensaje=mensaje)
 	    msj.save()
 
@@ -42,6 +44,16 @@ def contactame(request):
 	else:
 		form = ContactForm()
 		return render(request,"contactame.html",{"form": form})
+
+def send_simple_message():
+    return requests.post(
+        "https://api.mailgun.net/v2/samples.mailgun.org/messages",
+        auth=("api", "key-1fe898bc8e3b6d509eb0af3801efa6f7"),
+        data={"from": "Excited User <hola@jualjiman.com>",
+              "to": ["hola@jualjiman.com"]#, ""],
+              "subject": "Hello",
+              "text": "Testing some Mailgun awesomness!"})
+
 
 # Handler for HTTP POST to http://myhost.com/messages for the route defined above
 @csrf_exempt
@@ -54,7 +66,7 @@ def messages(request):
 		body_plain = request.POST.get('body-plain', '')
 		body_without_quotes = request.POST.get('stripped-text', '')
 		# note: other MIME headers are also posted here...
-		
+
 		nattachments = 0
 		# attachments:
 		for key in request.FILES:
