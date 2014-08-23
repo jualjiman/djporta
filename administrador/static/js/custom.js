@@ -16,9 +16,9 @@ $(document).ready(function(){
             if( email_regex.test(email) === true ){
                 $.ajax({
                     type: "POST",
-                    url: "/contactame/",  // or just url: "/my-url/path/"
+                    url: "/messages/",  // or just url: "/my-url/path/"
                     data: {								    
-                        csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
+                        //csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
                         name: name,
                         email: email,
                         message: message

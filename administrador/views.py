@@ -46,7 +46,7 @@ def contactame(request):
 # Handler for HTTP POST to http://myhost.com/messages for the route defined above
 @csrf_exempt
 def messages(request):
-	if request.method == 'POST':
+	if request.is_ajax():
 		sender    = request.POST.get('name')
 		recipient = request.POST.get('email')
 		subject   = request.POST.get('message', '')
