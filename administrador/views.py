@@ -37,7 +37,14 @@ def contactame(request):
 	    mensaje = request.POST['message']
 
 	    dfrom = nombre + " <" +  email + ">"
-	    send_simple_message(dfrom,mensaje)
+	    
+	    requests.post(
+        "https://api.mailgun.net/v2/samples.mailgun.org/messages",
+        auth=("api", "key-1fe898bc8e3b6d509eb0af3801efa6f7"),
+        data={"from": dfrom,
+              "to": ["hola@jualjiman.com"],
+              "subject": "Mensaje desde jualjiman.com",
+              "text": mensaje})
 
 	    msj = Mensaje(nombre=dfrom, email=email,mensaje=mensaje)
 	    msj.save()
@@ -46,15 +53,6 @@ def contactame(request):
 	else:
 		form = ContactForm()
 		return render(request,"contactame.html",{"form": form})
-
-def send_simple_message(dfrom,mensaje):
-    return requests.post(
-        "https://api.mailgun.net/v2/samples.mailgun.org/messages",
-        auth=("api", "key-1fe898bc8e3b6d509eb0af3801efa6f7"),
-        data={"from": dfrom,
-              "to": ["hola@jualjiman.com"],
-              "subject": "Mensaje desde jualjiman.com",
-              "text": mensaje})
 
 
 # Handler for HTTP POST to http://myhost.com/messages for the route defined above
