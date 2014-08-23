@@ -47,20 +47,20 @@ def contactame(request):
 @csrf_exempt
 def messages(request):
 	if request.method == 'POST':
-		# sender    = request.POST.get('sender')
-		# recipient = request.POST.get('recipient')
-		# subject   = request.POST.get('subject', '')
+		sender    = request.POST.get('sender')
+		recipient = request.POST.get('recipient')
+		subject   = request.POST.get('subject', '')
 
-		# body_plain = request.POST.get('body-plain', '')
-		# body_without_quotes = request.POST.get('stripped-text', '')
-		# # note: other MIME headers are also posted here...
+		body_plain = request.POST.get('body-plain', '')
+		body_without_quotes = request.POST.get('stripped-text', '')
+		# note: other MIME headers are also posted here...
 
-		# nattachments = 0
-		# # attachments:
-		# for key in request.FILES:
-		# 	file = request.FILES[key]
-		# 	nattachments += 1
-  #       	# do something with the file
+		nattachments = 0
+		# attachments:
+		for key in request.FILES:
+			file = request.FILES[key]
+			nattachments += 1
+        	# do something with the file
 		
 		msg = Email(sender=sender,recipient=recipent,subject=subject,body=body_without_quotes,nattachments=nattachments)
 		msg.save()
