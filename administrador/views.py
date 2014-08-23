@@ -46,8 +46,8 @@ def contactame(request):
               "subject": "Mensaje desde jualjiman.com",
               "text": mensaje})
 
-	    msj = Mensaje(nombre=dfrom, email=email,mensaje=mensaje)
-	    msj.save()
+	    #msj = Mensaje(nombre=dfrom, email=email,mensaje=mensaje)
+	    #msj.save()
 
 	    return HttpResponse('Ok')
 	else:
