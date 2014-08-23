@@ -86,4 +86,4 @@ class Email(models.Model):
 	fecha = models.DateTimeField(default=datetime.now(),editable=False)
 
 	def __str__(self):
-		return self.nombre
+		return self.sender
