@@ -46,15 +46,15 @@ def contactame(request):
 # Handler for HTTP POST to http://myhost.com/messages for the route defined above
 @csrf_exempt
 def messages(request):
-	if request.is_ajax():
-		sender    = request.POST.get('name')
-		recipient = request.POST.get('email')
-		subject   = request.POST.get('message', '')
+	if request.method == 'POST':
+		sender    = request.POST.get('sender')
+		recipient = request.POST.get('recipient')
+		subject   = request.POST.get('subject', '')
 
 		body_plain = request.POST.get('body-plain', '')
 		body_without_quotes = request.POST.get('stripped-text', '')
 		# note: other MIME headers are also posted here...
-
+		
 		nattachments = 0
 		# attachments:
 		for key in request.FILES:
