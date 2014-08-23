@@ -39,7 +39,7 @@ def contactame(request):
 	    dfrom = nombre + " <" +  email + ">"
 	    
 	    requests.post(
-        "https://api.mailgun.net/v2/sandbox58531cd99f8b406d9932f7ff5259395c.mailgun.org/messages",
+        "https://api.mailgun.net/v2/jualjiman.com/messages",
         auth=("api", "key-1fe898bc8e3b6d509eb0af3801efa6f7"),
         data={"from": dfrom,
               "to": ["hola@jualjiman.com"],
