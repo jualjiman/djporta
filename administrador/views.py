@@ -50,7 +50,7 @@ def send_simple_message():
         "https://api.mailgun.net/v2/samples.mailgun.org/messages",
         auth=("api", "key-1fe898bc8e3b6d509eb0af3801efa6f7"),
         data={"from": "Excited User <hola@jualjiman.com>",
-              "to": ["hola@jualjiman.com"]#, ""],
+              "to": ["hola@jualjiman.com"]
               "subject": "Hello",
               "text": "Testing some Mailgun awesomness!"})
 
