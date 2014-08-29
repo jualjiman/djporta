@@ -16,7 +16,7 @@ application = get_wsgi_application()
 """
 
 import os, sys
-sys.path.append('/var/www/djporta')
+#sys.path.append('/var/www/djporta')
 os.environ['DJANGO_SETTINGS_MODULE'] = 'djporta.settings'
 
 import django.core.handlers.wsgi
