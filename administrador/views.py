@@ -41,7 +41,7 @@ def contactame(request):
 	    requests.post(
         "https://api.mailgun.net/v2/jualjiman.com/messages",
         auth=("api", "key-1fe898bc8e3b6d509eb0af3801efa6f7"),
-        data={"from": "Juan Alberto Jimenez Angel <hola@jualjiman.com>",
+        data={"from": nombre + " <" + email + ">",
               "to": ["jualjiman@gmail.com","blow.it.away@live.com.mx"],
               "subject": "Mensaje desde jualjiman.com",
               "text": mensaje})
