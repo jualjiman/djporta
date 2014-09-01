@@ -70,12 +70,24 @@ WSGI_APPLICATION = 'djporta.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+"""
+SQLite3
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'djporta/db/db.sqlite3'),#'/home/betto/GitHub/djporta/djporta/db/db.sqlite3',#
     }
 }
+"""
+DATABASES = {
+    'default': {
+        'NAME': 'portafolio',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'root',
+        'PASSWORD': '081510979'
+    }
+  }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
