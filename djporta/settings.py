@@ -83,8 +83,8 @@ DATABASES = {
     'default': {
         'NAME': 'portafolio',
         'ENGINE': 'django.db.backends.mysql',
-        'USER': 'root',
-        'PASSWORD': '081510979'
+        'USER': 'wadmin',
+        'PASSWORD': 'cortana117.,'
     }
   }
 
