@@ -83,11 +83,20 @@ def messages(request):
 	return HttpResponse('OK')
 
 class HelloPDFView(PDFTemplateView):
-	template_name = "intentando.html"
+	
 
 	def get_context_data(self, **kwargs):
+		template_name = "intentando.html"
+		infos = InformacionGeneral.objects.filter(categoria = "IG", activo = True).order_by("-prioridad")
+		tecnos = InformacionGeneral.objects.filter(categoria = "TG", activo = True).order_by("-prioridad")
+		lengs = InformacionGeneral.objects.filter(categoria = "LG", activo = True).order_by("-prioridad")
+		exps = ExperienciaProfesional.objects.filter(activo = True).order_by("-desde")
+
 		return super(HelloPDFView, self).get_context_data(
             		pagesize="A4",
             		title="Hi there!",
-            		**kwargs
+            		infos,
+            		tecnos,
+            		lengs,
+            		exps,
         	)
