@@ -1,0 +1,250 @@
+ @import "fonts.css"
+
+color = #00ADAD //blue#03a679 //green#03a679
+darkcolor = darken(color,20%)
+darkercolor = darken(color,40%)
+
+grisclaro = #FDFDFD
+gris = #eeeeee
+grisobscuro = #E4E4E4
+grisJumbotron = #f5f5f5
+
+cblack = #3a3a3a
+cgray = #747474
+
+cwhite = #e7e7e7
+cyellow	= #F6B322
+ 
+transitionTime = 0.3s
+
+*
+	font-family 'Open Sans', sans-serif
+
+header
+	background color
+	border-bottom solid 4px darkcolor
+	position relative
+
+#mainContent
+	display none
+
+.separacionVertical
+	padding-bottom 20px
+
+.separacionVerticalMin
+	padding-bottom 12px
+
+.navbar-brand
+	cursor default 
+	img
+		border-radius 50%
+		width 130px
+		transition transform transitionTime ease
+
+		&:hover
+			transform scale(1.1)
+	h1
+		color white
+
+.icon-github,
+.icon-download
+	color color
+	position absolute
+	bottom -23px
+	font-size 30px
+	border solid 2px darkcolor
+	border-radius 50%
+	width 45px
+	height 45px
+	text-align center
+	text-decoration none
+	background cwhite
+	padding-top 6px
+	transition transform transitionTime ease
+
+	&:hover
+		transform scale(1.2)
+
+.icon-download
+	right 20px
+
+.icon-github
+	right 70px
+	padding-left 5px
+
+.icon-award
+.icon-work
+	font-size 20px
+	position absolute
+	top 0px
+	left -15px
+
+.icon-award
+	color cyellow
+.icon-work
+	color cgray
+
+.icon-link-absolute
+	position absolute
+	bottom 0 
+	right 0
+	background color
+	color cwhite
+	font-size 14px
+	padding 5px 16px
+	border-radius 3px 0
+	opacity 0.7
+
+.icon-link-title
+	font-size 13px
+
+.pRelative
+	position relative
+// -----------------------------------
+.navbarFix
+	margin-bottom 0
+	.navbar-collapse
+		text-align initial
+		display inline-block !important
+		padding-top 22px
+		float right
+	.navbar-header
+		display inline-block
+		.navbar-brand
+			text-align left
+			display inline-block
+
+			img
+				width 58px
+			h1
+				display inline-block
+				margin-left 10px
+				font-size 24px
+// ----------------------------------
+
+.titulo,
+.desc
+	padding 0 10px
+.desc
+	text-align justify
+
+.titulo
+	font-weight 600
+	color cgray
+
+.subtitulo
+	font-weight normal
+	font-size 16px
+	
+	&:before
+		content	" "
+
+.expe-lugar
+	display	inline-block
+	margin-left	10px
+	color color
+	font-size 16px
+
+a.expe-lugar
+	transition all 0.3s ease
+	&:hover
+		color darkcolor
+		text-decoration none
+		
+
+a.thumbnail
+
+		&:hover
+		&:focus
+		&:active
+			border-color color
+			text-decoration none
+			cursor pointer
+.jumbotron
+	background grisJumbotron
+	border-bottom solid 1px grisobscuro
+
+.tituloPrincipal
+	color color
+	font-weight 600
+
+.fondoObscuro
+	background grisclaro
+	border-top solid 1px gris
+	border-bottom solid 1px gris
+footer
+	border-top solid 5px darkercolor
+	background cblack
+	height 160px
+
+	p
+		color #929699
+		text-align center
+		margin 0 0 1em 0
+		&:first-child
+			color #c4c4c4
+			text-align center
+			margin: 2em 0 0.2em 0
+
+.alert-info
+.alert-warning
+.alert-danger
+	display none
+	
+
+
+//@media (max-width: 767px)
+//@media (min-width: 490px) and (max-width: 767px)
+//@media (min-width: 768px) and (max-width: 991px)
+//@media (min-width: 992px)
+
+
+#loading
+	img
+		margin 30px auto
+		width 50px
+		display block
+
+// ----------------------BOOTSTRAP ROW SAME HEIGHT FIX--------------------------
+
+// .navbar-default .navbar-nav > li > a:focus,*
+// .navbar-default .navbar-nav > li > a:hover, 
+// .navbar-default .navbar-nav > .active > a:hover,*
+// .navbar-default .navbar-nav > .active > a:focus,*
+// .navbar-default .navbar-nav > .active > a,*
+
+.navbar-default 
+	.navbar-nav 
+		> li
+			> a
+				&:focus
+				&:hover
+					color darkcolor
+		> .active
+			> a
+				color darkcolor
+
+				&:hover
+				&:focus
+					color darkcolor
+
+.btn-primary 
+	color color
+	background-color white 
+	border-color color
+	transition all transitionTime ease
+
+.btn-primary.active
+	color cwhite
+	border-color color
+	background color
+
+.btn-primary
+	&:hover 
+	&:focus 
+	&:active
+		@extend .btn-primary.active
+.open 
+	> .dropdown-toggle.btn-primary
+		@extend .btn-primary.active
+		

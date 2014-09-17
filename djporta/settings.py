@@ -23,7 +23,7 @@ sys.setdefaultencoding('utf-8')
 SECRET_KEY = '9%cucr(gc&t15fe#pj#m%96-$1wj(**9s7j$*@!o=c07)ijcc*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = False
 
@@ -31,7 +31,7 @@ ALLOWED_HOSTS = [".jualjiman.com",".jualjiman.com."]
 
 
 # Application definition
-
+"""
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
@@ -39,9 +39,11 @@ TEMPLATE_CONTEXT_PROCESSORS = TCP + (
 )
 
 GRAPPELLI_ADMIN_TITLE = "Jualjiman"
+"""
 
 INSTALLED_APPS = (
-    'grappelli',
+    'django_admin_bootstrapped.bootstrap3',
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -108,7 +110,7 @@ DEFAULT_CHARSET = 'utf-8'
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = '/var/www/djporta/administrador/static' #os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['static'])
+STATIC_ROOT = os.path.join(BASE_DIR, 'administrador/static')
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',

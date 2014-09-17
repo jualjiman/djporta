@@ -4,6 +4,7 @@ from django.shortcuts import render
 from .models import *
 from .forms import *
 from django.views.decorators.csrf import csrf_exempt
+from easy_pdf.views import PDFTemplateView
 import requests
 
 # Create your views here.
@@ -41,8 +42,9 @@ def contactame(request):
 	    requests.post(
         "https://api.mailgun.net/v2/jualjiman.com/messages",
         auth=("api", "key-1fe898bc8e3b6d509eb0af3801efa6f7"),
+
         data={"from": nombre + " <" + email + ">",
-              "to": ["jualjiman@gmail.com","blow.it.away@live.com.mx"],
+              "to": ["contacto@jualjiman.com",],
               "subject": "Mensaje desde jualjiman.com",
               "text": mensaje})
 
@@ -79,3 +81,13 @@ def messages(request):
     # Returned text is ignored but HTTP status code matters:
     # Mailgun wants to see 2xx, otherwise it will make another attempt in 5 minutes
 	return HttpResponse('OK')
+
+class HelloPDFView(PDFTemplateView):
+	template_name = "intentando.html"
+
+	def get_context_data(self, **kwargs):
+		return super(HelloPDFView, self).get_context_data(
+            		pagesize="A4",
+            		title="Hi there!",
+            		**kwargs
+        	)

@@ -1,0 +1,64 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/icomoon.eot?s82jms');
+	src:url('../fonts/icomoon/icomoon.eot?#iefixs82jms') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.woff?s82jms') format('woff'),
+		url('../fonts/icomoon/icomoon.ttf?s82jms') format('truetype'),
+		url('../fonts/icomoon/icomoon.svg?s82jms#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-studies:before,
+.icon-projects,
+.icon-information:before,
+.icon-contact:before,
+.icon-send:before{
+	padding-right: 5px;
+	font-size: 16px;
+}
+
+.icon-award:before {
+	content: "\e607";
+}
+.icon-work:before {
+	content: "\e609";
+}
+.icon-send:before {
+	content: "\e608";
+}
+.icon-github:before {
+	content: "\e603";
+}
+.icon-contact:before {
+	content: "\e604";
+}
+.icon-information:before {
+	content: "\e605";
+}
+.icon-projects:before {
+	content: "\e601";
+}
+.icon-download:before {
+	content: "\e602";
+}
+.icon-link:before {
+	content: "\e600";
+}
+.icon-studies:before {
+	content: "\e606";
+}
