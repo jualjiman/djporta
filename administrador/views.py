@@ -83,7 +83,7 @@ def messages(request):
 	return HttpResponse('OK')
 
 class HelloPDFView(PDFTemplateView):
-	template_name = "intentando.html"
+	template_name = "pdf.html"
 	infos = InformacionGeneral.objects.filter(categoria = "IG", activo = True).order_by("-prioridad")
 	tecnos = InformacionGeneral.objects.filter(categoria = "TG", activo = True).order_by("-prioridad")
 	lengs = InformacionGeneral.objects.filter(categoria = "LG", activo = True).order_by("-prioridad")

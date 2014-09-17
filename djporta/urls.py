@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     url(r'^proyectos/$', 'administrador.views.proyectos', name='proyectos'),
     url(r'^contactame/$', 'administrador.views.contactame', name='contactame'),
     url(r'^messages/$', 'administrador.views.messages', name='messages'),
-    url(r'^hello.pdf/$', HelloPDFView.as_view()),
+    url(r'^curriculum-pdf/$', HelloPDFView.as_view()),
 )
 
 # urlpatterns += patterns('',
