@@ -94,5 +94,5 @@ class HelloPDFView(PDFTemplateView):
 		return super(HelloPDFView, self).get_context_data(
             		pagesize="A4",
             		title="Hi there!",
-            		**kwargs,
+            		**kwargs
         	)
