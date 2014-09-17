@@ -1,5 +1,48 @@
-<html>
+{% load thumbnail %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>CV Juan Alberto Jimenez Angel</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="description" content="Apasionado con las nuevas tecnologías de desarrollo de software que actualmente están permitiendo ser al mundo un lugar más rápido y cómodo." />
+    
+    <meta name="author" content="Juan Alberto Jimenez Angel" />
+
+	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'> -->
+	<link rel="stylesheet" href="static/css/custom.css">
+	 <link rel="shortcut icon" href="static/images/favico.ico">
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+</head>
 <body>
+	<header>
+		<div class="container">
+			<nav class="navbar navbar-default" role="navigation">
+			  <div class="container-fluid deletePaddings">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#">
+			      	<img src="static/images/avatar.jpg" alt="">
+			      	<h1>Juan Alberto Jiménez Ángel</h1>
+			      </a>
+			    </div>
+			  </div><!-- /.container-fluid -->
+			</nav>
+		</div>
+	</header>
+	<section id="mainContent">
+		<div class="jumbotron marginTopHeader text-center">
+		  <h2>Ingeniero en sistemas computacionales</h2>
+		  <p>Autodidacta, inquieto y apasionado con las nuevas tecnologías de desarrollo de software que actualmente están permitiendo ser al mundo un lugar más rápido y cómodo.</p>
+		</div>
 		<div class="container-fluid">
 			<div class="container separacionVertical">
 			<h3 class="text-center tituloPrincipal">Información general</h3>
@@ -68,5 +111,12 @@
 				</div>
 			</div>
 		</div>
+	</section>
+	<footer>
+		<p id="footer_titulo">
+			<span>Curriculum</span> y portafolio
+		</p>
+		<p id="footer_creditos">Juan Alberto Jiménez Ángel</p>
+	</footer>
 </body>
 </html>
