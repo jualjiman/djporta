@@ -1578,12 +1578,41 @@ address {
 
 
 *{color: gray;}
-header{background:#00adad;border-bottom:solid 4px #008a8a}
-.avatar{border-radius:50%;width:130px; display: block; margin:20px auto 0 auto}
-.white-letters{color: white;}
-.jumbotron{background:#f5f5f5;border-bottom:solid 1px #e4e4e4;padding-top: 48px;padding-bottom: 48px;}
-.subtitle{font-size: 22px}
-.tituloPrincipal {color: #00adad;font-weight: 600}
-.separacionVertical {padding-bottom: 20px}
-.fondoObscuro {background: #fdfdfd; border-top: solid 1px #eee; border-bottom: solid 1px #eee}
-.titulo {font-weight: 600; color: #747474}
+header{
+  background:#00adad;
+  border-bottom:solid 4px #008a8a;
+}
+.avatar{
+  border-radius:50%;
+  width:130px;
+  display: block; 
+  margin:20px auto 0 auto;
+}
+.white-letters{
+  color: white;
+}
+.jumbotron{
+  background:#f5f5f5;
+  border-bottom:solid 1px #e4e4e4;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+.subtitle{
+  font-size: 22px;
+}
+.tituloPrincipal {
+  color: #00adad;
+  font-weight: 600;
+}
+.separacionVertical {
+  padding-bottom: 20px
+}
+.fondoObscuro {
+  background: #fdfdfd; 
+  border-top: solid 1px #eee; 
+  border-bottom: solid 1px #eee;
+}
+.titulo {
+  font-weight: 600;
+  color: #747474;
+}
