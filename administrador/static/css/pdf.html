@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>CV Juan Alberto Jimenez Angel</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    
+    <meta name="author" content="Juan Alberto Jimenez Angel" />
+	<link rel="stylesheet" href="bootstrap.pdf.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<!-- <img src="/static/images/avatar.jpg" alt=""> -->
+			<div class="row">
+				<div class="col-xs-3"></div>
+				<div class="col-xs-6">
+					<img class="avatar" src="/static/images/avatar.jpg" alt="">
+					<h1 class="white-letters text-center">Juan Alberto Jiménez Ángel</h1>
+				</div>
+				<div class="col-xs-3"></div>
+			</div>
+		</div>
+	</header>
+	<section id="mainContent">
+		<div class="jumbotron marginTopHeader text-center">
+		  <h2 class="removeMarginTop">Ingeniero en sistemas computacionales</h2>
+		  <p class="subtitle">Autodidacta, inquieto y apasionado con las nuevas tecnologías de desarrollo de software que actualmente están permitiendo ser al mundo un lugar más rápido y cómodo.</p>
+		</div>
+		<div class="container-fluid">
+			<div class="container separacionVertical">
+			<h3 class="text-center tituloPrincipal">Información general</h3>
+			<div class="row">
+				{%for info in infos%}
+					<div class="col-sm-6 col-sm-4 col-md-3 separacionVerticalMin gral">
+						<h4 class="titulo">{{ info.campo }}</h4>
+						<div class="desc">{{ info.info }}</div>
+					</div>
+				{% endfor %}
+
+			</div>
+			</div>
+		</div>
+		<div class="container-fluid fondoObscuro">
+			<div class="container separacionVertical">
+				<h3 class="text-center tituloPrincipal">Habilidades</h3>
+				<div class="row">
+					{%for tecno in tecnos%}
+					<div class="col-sm-6 col-md-4 separacionVerticalMin tecn">
+						<h4 class="titulo">{{ tecno.campo }}</h4>
+						<div class="desc">{{ tecno.info }}</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="container separacionVertical">
+				<h3 class="text-center tituloPrincipal">Lenguajes</h3>
+				<div class="row">
+					{%for leng in lengs%}
+					<div class="col-sm-4 col-md-3 separacionVerticalMin leng">
+						<h4 class="titulo">{{ leng.campo }}</h4>
+						<div class="desc">{{ leng.info }}</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid fondoObscuro">
+			<div class="container separacionVertical">
+			<h3 class="text-center tituloPrincipal">Experiencia profesional</h3>
+				<div class="row">
+					{%for exp in exps%}
+					<div class="col-sm-6 col-md-4 separacionVerticalMin expe">
+						<h4 class="titulo pRelative">
+							{{ exp.puesto }}
+							{% if exp.actual == True %}
+								&nbsp;(actual)
+								<span class="icon-work" title="Teminado"></span>
+							{% endif %}
+						</h4>
+						<p class="expe-lugar">{{ exp.lugar }}</p>
+						<div class="desc">
+						<p class="expe-fecha">
+							{{ exp.desde|date:"M Y" }}
+							{% if exp.hasta != null%}
+								- {{ exp.hasta|date:"M Y" }}
+							{% endif %}
+						</p>
+						{# {{ exp.info|linebreaks }} #}
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
