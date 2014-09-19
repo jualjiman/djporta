@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
+import ho.pisa as pisa
+import cStringIO as StringIO
+import cgi
+from django.template import RequestContext
+from django.template.loader import render_to_string
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from .models import *
 from .forms import *
 from django.views.decorators.csrf import csrf_exempt
-from easy_pdf.views import PDFTemplateView
 import requests
 
 # Create your views here.
@@ -82,6 +86,34 @@ def messages(request):
     # Mailgun wants to see 2xx, otherwise it will make another attempt in 5 minutes
 	return HttpResponse('OK')
 
+def generar_pdf(html):
+    	# Función para generar el archivo PDF y devolverlo mediante HttpResponse
+    	result = StringIO.StringIO()
+    	pdf = pisa.pisaDocument(StringIO.StringIO(html.encode("UTF-8")), result)
+    	if not pdf.err:
+        	return HttpResponse(result.getvalue(), mimetype='application/pdf')
+    	return HttpResponse('Error al generar el PDF: %s' % cgi.escape(html))
+
+def curriculum_pdf(request):
+   	 # vista de ejemplo con un hipotético modelo Libro
+    
+        infos = InformacionGeneral.objects.filter(categoria = "IG", activo = True).order_by("-prioridad")
+        tecnos = InformacionGeneral.objects.filter(categoria = "TG", activo = True).order_by("-prioridad")
+        lengs = InformacionGeneral.objects.filter(categoria = "LG", activo = True).order_by("-prioridad")
+        exps = ExperienciaProfesional.objects.filter(activo = True).order_by("-desde")
+
+    	html = render_to_string('pdf.html', 
+		{
+		'pagesize':'Letter', 
+		'infos':infos,
+		'tecnos':tecnos,
+		'lengs':lengs,
+		'exps':exps
+		}, context_instance=RequestContext(request))
+	return generar_pdf(html)
+
+"""
+xhtml2pdf code
 class HelloPDFView(PDFTemplateView):
 	template_name = "pdf.html"
 	infos = InformacionGeneral.objects.filter(categoria = "IG", activo = True).order_by("-prioridad")
@@ -92,7 +124,7 @@ class HelloPDFView(PDFTemplateView):
 	def get_context_data(self, **kwargs):
 
 		return super(HelloPDFView, self).get_context_data(
-            		pagesize="A4",
+            		pagesize="Legal",
             		title="Hi there!",
 			infos=self.infos,
 			tecnos=self.tecnos,
@@ -100,3 +132,4 @@ class HelloPDFView(PDFTemplateView):
 			exps=self.exps,
             		**kwargs
         	)
+"""

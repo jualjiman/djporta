@@ -386,15 +386,15 @@ h1,
 }
 h2,
 .h2{
-  font-size: 30px;
+  font-size: 24px;
 }
 h3,
 .h3{
-  font-size: 24px;
+  font-size: 18px;
 }
 h4,
 .h4{
-  font-size: 18px;
+  font-size: 14px;
 }
 h5,
 .h5{
@@ -404,9 +404,6 @@ h6,
 .h6{
   font-size: 12px;
 }
-p{
-  margin: 0 0 10px;
-}
 .lead{
   margin-bottom: 20px;
   font-size: 16px;
@@ -415,43 +412,85 @@ p{
 }
 
 /*===================================================================*/
+
 *{color: gray;}
+body{
+  margin:0;
+  padding:0;
+}
 header{
   background:#00adad;
-  border-bottom:solid 4px #008a8a;
+  border-bottom:solid 5px #008a8a;
 }
+
+h1,h2{
+  padding-top:20px;
+  margin:0;
+  text-align: center;
+}
+
 .avatar{
-  border-radius:50%;
   width:130px;
   display: block; 
-  margin:0 auto;
-  padding-top: 20px;
+  text-align: center;
+  padding-top: 40px;
 }
 .white-letters{
   color: white;
 }
 .jumbotron{
+  padding: 10px;
+  margin:0;
   background:#f5f5f5;
   border-bottom:solid 1px #e4e4e4;
-  padding-top: 48px;
-  padding-bottom: 48px;
 }
 .subtitle{
-  font-size: 22px;
+  margin:0;
+  text-align: center;
+  font-size: 16px;
 }
 .tituloPrincipal{
+  padding: 30px 0 0 20px;
   color: #00adad;
   font-weight: 600;
+  font-size:18px;
+  text-align:center;
 }
 .separacionVertical{
-  padding-bottom: 20px
+  padding-bottom: 10px;
 }
 .fondoObscuro{
-  background: #fdfdfd; 
+  /*margin:0;
+  padding:0;
+  background: #fdfdfd;
   border-top: solid 1px #eee; 
-  border-bottom: solid 1px #eee;
+  border-bottom: solid 1px #eee;*/
 }
 .titulo{
+  margin:0;
+  padding-left: 10px;
+  font-size:14px;
   font-weight: 600;
   color: #747474;
+}
+
+.expe-lugar{
+  display: inline-block;
+  margin-left: 10px;
+  color: #00adad;
+  font-size: 14px;
+}
+
+.desc{
+  text-align:justify;
+}
+
+.gral,
+.tecn{
+  display:inline;
+  width: 500px;
+}
+
+.container-fluid{
+ padding: 0 20px;
 }
