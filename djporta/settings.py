@@ -31,15 +31,6 @@ ALLOWED_HOSTS = [".jualjiman.com",".jualjiman.com."]
 
 
 # Application definition
-"""
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
-
-TEMPLATE_CONTEXT_PROCESSORS = TCP + (
-    'django.core.context_processors.request',
-)
-
-GRAPPELLI_ADMIN_TITLE = "Jualjiman"
-"""
 
 INSTALLED_APPS = (
     'django_admin_bootstrapped.bootstrap3',
@@ -72,25 +63,6 @@ WSGI_APPLICATION = 'djporta.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
-"""
-SQLite3
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'djporta/db/db.sqlite3'),#'/home/betto/GitHub/djporta/djporta/db/db.sqlite3',#
-    }
-}
-"""
-DATABASES = {
-    'default': {
-        'NAME': 'portafolio',
-        'ENGINE': 'django.db.backends.mysql',
-        'USER': 'wadmin',
-        'PASSWORD': 'cortana117.,'
-    }
-  }
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -121,4 +93,10 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['media'])
 MEDIA_URL = '/media/'
+
+# Local Settings import
+try:
+    from local_settings import *  # NOQA
+except:
+    pass
 
