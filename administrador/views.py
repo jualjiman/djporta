@@ -59,7 +59,7 @@ def contactame(request):
 			'Mensaje desde Jualjiman.com', 
 			mensaje, 
 			'contacto@jualjiman.com', 
-			['jualjiman@gmail.com', 'blow.it.away@live.com.mx', 'contacto@jualjiman.com','contacto@edecanesenacapulco.com.mx'], 
+			['blow.it.away@live.com.mx', 'contacto@jualjiman.com'], 
 			fail_silently=False
 		)
 
