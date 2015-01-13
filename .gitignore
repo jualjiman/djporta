@@ -1,0 +1,5 @@
+djporta/local_settings.py
+media/
+*.pyc
+*.py.save
+*.sqlite3

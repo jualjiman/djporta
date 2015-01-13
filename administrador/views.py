@@ -55,7 +55,13 @@ def contactame(request):
               "text": mensaje})
 		"""
 
-		send_mail('Subject here', 'Here is the message.', 'contacto@jualjiman.com', ['jualjiman@gmail.com', 'blow.it.away@live.com.mx', 'contacto@jualjiman.com','contacto@edecanesenacapulco.com.mx'], fail_silently=False)
+	    send_mail(
+			'Mensaje desde Jualjiman.com', 
+			mensaje, 
+			'contacto@jualjiman.com', 
+			['jualjiman@gmail.com', 'blow.it.away@live.com.mx', 'contacto@jualjiman.com','contacto@edecanesenacapulco.com.mx'], 
+			fail_silently=False
+		)
 
 	    msj = Mensaje(nombre=dfrom, email=email,mensaje=mensaje)
 	    msj.save()
