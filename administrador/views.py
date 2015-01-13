@@ -42,9 +42,9 @@ def contactame(request):
 	    email = request.POST['email']
 	    mensaje = request.POST['message']
 
-	    """
-	    dfrom = nombre + " <" +  email + ">"
 	    
+	    dfrom = nombre + " <" +  email + ">"
+	    """
 	    requests.post(
         "https://api.mailgun.net/v2/jualjiman.com/messages",
         auth=("api", "key-1fe898bc8e3b6d509eb0af3801efa6f7"),
@@ -55,7 +55,7 @@ def contactame(request):
               "text": mensaje})
 		"""
 
-		send_mail('Subject here', 'Here is the message.', 'contacto@jualjiman.com', ['jualjiman@gmail.com', 'blow.it.away@live.com.mx', 'contacto@jualjiman.com','contacto@edecanesenacapulco.com.mx'], fail_silently=False)
+		send_mail('Mensaje desde Jualjiman.com', mensaje, 'contacto@jualjiman.com', ['jualjiman@gmail.com', 'blow.it.away@live.com.mx', 'contacto@jualjiman.com','contacto@edecanesenacapulco.com.mx'], fail_silently=False)
 
 	    msj = Mensaje(nombre=dfrom, email=email,mensaje=mensaje)
 	    msj.save()
