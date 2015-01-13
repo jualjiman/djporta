@@ -9,7 +9,8 @@ from django.shortcuts import render
 from .models import *
 from .forms import *
 from django.views.decorators.csrf import csrf_exempt
-import requests
+from django.core.mail import send_mail
+"""import requests"""
 
 # Create your views here.
 def home(request):
@@ -41,6 +42,7 @@ def contactame(request):
 	    email = request.POST['email']
 	    mensaje = request.POST['message']
 
+	    """
 	    dfrom = nombre + " <" +  email + ">"
 	    
 	    requests.post(
@@ -51,6 +53,9 @@ def contactame(request):
               "to": ["contacto@jualjiman.com",],
               "subject": "Mensaje desde jualjiman.com",
               "text": mensaje})
+		"""
+
+		send_mail('Subject here', 'Here is the message.', 'contacto@jualjiman.com', ['jualjiman@gmail.com', 'blow.it.away@live.com.mx', 'contacto@jualjiman.com','contacto@edecanesenacapulco.com.mx'], fail_silently=False)
 
 	    msj = Mensaje(nombre=dfrom, email=email,mensaje=mensaje)
 	    msj.save()
