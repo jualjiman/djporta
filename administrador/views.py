@@ -54,12 +54,14 @@ def contactame(request):
               "subject": "Mensaje desde jualjiman.com",
               "text": mensaje})
 		"""
-
+		mensaje = dfrom + "\n\n" + 
+			mensaje
+			
 	    send_mail(
 			'Mensaje desde Jualjiman.com', 
 			mensaje, 
-			dfrom, 
-			['blow.it.away@live.com.mx', 'contacto@jualjiman.com'], 
+			"Jualjiman's mailer <mailer@jualjiman.com>", 
+			['contacto@jualjiman.com',], 
 			fail_silently=False
 		)
 
@@ -122,25 +124,3 @@ def curriculum_pdf(request):
 		'exps':exps
 		}, context_instance=RequestContext(request))
 	return generar_pdf(html)
-
-"""
-xhtml2pdf code
-class HelloPDFView(PDFTemplateView):
-	template_name = "pdf.html"
-	infos = InformacionGeneral.objects.filter(categoria = "IG", activo = True).order_by("-prioridad")
-	tecnos = InformacionGeneral.objects.filter(categoria = "TG", activo = True).order_by("-prioridad")
-	lengs = InformacionGeneral.objects.filter(categoria = "LG", activo = True).order_by("-prioridad")
-	exps = ExperienciaProfesional.objects.filter(activo = True).order_by("-desde")
-	
-	def get_context_data(self, **kwargs):
-
-		return super(HelloPDFView, self).get_context_data(
-            		pagesize="Legal",
-            		title="Hi there!",
-			infos=self.infos,
-			tecnos=self.tecnos,
-			lengs=self.lengs,
-			exps=self.exps,
-            		**kwargs
-        	)
-"""
