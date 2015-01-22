@@ -52,8 +52,8 @@ def contactame(request):
 	    nombre = request.POST['name']
 	    email = request.POST['email']
 	    mensaje = request.POST['message']
-		
-		dfrom = nombre + " <" +  email + ">"
+
+	    dfrom = nombre + " <" +  email + ">"
 	    
 		mensaje = dfrom + "\n\n" + mensaje
 
