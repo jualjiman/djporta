@@ -56,7 +56,7 @@ def contactame(request):
 		"""
 		mensaje = dfrom + "\n\n" + 
 			mensaje
-			
+
 	    send_mail(
 			'Mensaje desde Jualjiman.com', 
 			mensaje, 
