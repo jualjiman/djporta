@@ -58,7 +58,7 @@ def contactame(request):
 	    send_mail(
 			'Mensaje desde Jualjiman.com', 
 			mensaje, 
-			'contacto@jualjiman.com', 
+			dfrom, 
 			['blow.it.away@live.com.mx', 'contacto@jualjiman.com'], 
 			fail_silently=False
 		)
