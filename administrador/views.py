@@ -36,26 +36,26 @@ siempre estar pendiente de colocar el form como las variables que le pasas al te
 tambien de colocar la linea de encoding para utf8 en cada lugar donde vayas a usar acentos o caracteres epeciales
 importar el form 
 """
+
+"""
+requests.post(
+"https://api.mailgun.net/v2/jualjiman.com/messages",
+auth=("api", "key-1fe898bc8e3b6d509eb0af3801efa6f7"),
+
+data={"from": nombre + " <" + email + ">",
+      "to": ["contacto@jualjiman.com",],
+      "subject": "Mensaje desde jualjiman.com",
+      "text": mensaje})
+"""
 def contactame(request):
 	if request.is_ajax():
 	    nombre = request.POST['name']
 	    email = request.POST['email']
 	    mensaje = request.POST['message']
-
+		
+		dfrom = nombre + " <" +  email + ">"
 	    
-	    dfrom = nombre + " <" +  email + ">"
-	    """
-	    requests.post(
-        "https://api.mailgun.net/v2/jualjiman.com/messages",
-        auth=("api", "key-1fe898bc8e3b6d509eb0af3801efa6f7"),
-
-        data={"from": nombre + " <" + email + ">",
-              "to": ["contacto@jualjiman.com",],
-              "subject": "Mensaje desde jualjiman.com",
-              "text": mensaje})
-		"""
-		mensaje = dfrom + "\n\n" + 
-			mensaje
+		mensaje = dfrom + "\n\n" + mensaje
 
 	    send_mail(
 			'Mensaje desde Jualjiman.com', 
