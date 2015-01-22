@@ -54,8 +54,7 @@ def contactame(request):
 	    mensaje = request.POST['message']
 
 	    dfrom = nombre + " <" +  email + ">"
-	    
-		mensaje = dfrom + "\n\n" + mensaje
+	    mensaje = dfrom + "\n\n" + mensaje
 
 	    send_mail(
 			'Mensaje desde Jualjiman.com', 
