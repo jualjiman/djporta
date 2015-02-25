@@ -31,6 +31,8 @@ class ImageAdmin(admin.ModelAdmin):
 	def show_avatar(self,obj):
 		return '<img src="%s" />' % get_thumbnail(obj.imagen,'80x80', crop='center').url #format='PNG', quality=99
 
+	show_avatar.allow_tags = True
+
 class MensAdmin(admin.ModelAdmin):
 	list_display = ('nombre','email','mensaje','fecha')
 
