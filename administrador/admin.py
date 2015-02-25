@@ -25,6 +25,12 @@ class ProyeAdmin(admin.ModelAdmin):
 
 	imagen_proyecto.allow_tags = True
 
+class ImageAdmin(admin.ModelAdmin):
+	list_display = ("show_avatar", "activo")
+
+	def show_avatar(self,obj):
+	return '<img src="%s" />' % get_thumbnail(obj.imagen,'80x80', crop='center').url #format='PNG', quality=99
+
 class MensAdmin(admin.ModelAdmin):
 	list_display = ('nombre','email','mensaje','fecha')
 
@@ -37,3 +43,4 @@ admin.site.register(Estudio,EstAdmin)
 admin.site.register(Proyecto,ProyeAdmin)
 admin.site.register(Mensaje,MensAdmin)
 admin.site.register(Email,Messages)
+admin.site.register(Image,ImageAdmin)

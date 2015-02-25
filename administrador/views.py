@@ -12,24 +12,49 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail
 """import requests"""
 
+fbAppId = 848121238581514
+fb = {
+	"url" : "",
+	"title" : "CV Juan Alberto Jiménez Ángel",
+	"description" : "Autodidacta, inquieto y apasionado con las nuevas tecnologías de desarrollo de software que actualmente están permitiendo ser al mundo un lugar más rápido y cómodo.",
+}
+
 # Create your views here.
 def home(request):
 	infos = InformacionGeneral.objects.filter(categoria = "IG", activo = True).order_by("-prioridad")
 	tecnos = InformacionGeneral.objects.filter(categoria = "TG", activo = True).order_by("-prioridad")
 	lengs = InformacionGeneral.objects.filter(categoria = "LG", activo = True).order_by("-prioridad")
 	exps = ExperienciaProfesional.objects.filter(activo = True).order_by("-desde")
-	
-	return render(request,"index.html",{"infos": infos, "tecnos":tecnos,"lengs":lengs,"exps":exps,})
+
+	return render(
+		request,
+		"index.html",
+		{
+			"infos": infos, 
+			"tecnos":tecnos,
+			"lengs":lengs,
+			"exps":exps,
+		})
 
 def estudios(request):
 	estus = Estudio.objects.filter(activo = True).order_by("-fecha")
 	
-	return render(request,"estudios.html",{"estus":estus,})
+	return render(
+		request,
+		"estudios.html",
+		{
+			"estus":estus,
+		})
 
 def proyectos(request):
 	proyes = Proyecto.objects.filter(activo = True).order_by("-fecha")
 	
-	return render(request,"proyectos.html",{"proyes":proyes,})
+	return render(
+		request,
+		"proyectos.html",
+		{
+			"proyes":proyes,
+		})
 
 """
 siempre estar pendiente de colocar el form como las variables que le pasas al template 
@@ -70,7 +95,12 @@ def contactame(request):
 	    return HttpResponse('Ok')
 	else:
 		form = ContactForm()
-		return render(request,"contactame.html",{"form": form})
+		return render(
+			request,
+			"contactame.html",
+			{
+				"form": form,
+			})
 
 
 # Handler for HTTP POST to http://myhost.com/messages for the route defined above
@@ -97,29 +127,3 @@ def messages(request):
     # Returned text is ignored but HTTP status code matters:
     # Mailgun wants to see 2xx, otherwise it will make another attempt in 5 minutes
 	return HttpResponse('OK')
-
-def generar_pdf(html):
-    	# Función para generar el archivo PDF y devolverlo mediante HttpResponse
-    	result = StringIO.StringIO()
-    	pdf = pisa.pisaDocument(StringIO.StringIO(html.encode("UTF-8")), result)
-    	if not pdf.err:
-        	return HttpResponse(result.getvalue(), mimetype='application/pdf')
-    	return HttpResponse('Error al generar el PDF: %s' % cgi.escape(html))
-
-def curriculum_pdf(request):
-   	 # vista de ejemplo con un hipotético modelo Libro
-    
-        infos = InformacionGeneral.objects.filter(categoria = "IG", activo = True).order_by("-prioridad")
-        tecnos = InformacionGeneral.objects.filter(categoria = "TG", activo = True).order_by("-prioridad")
-        lengs = InformacionGeneral.objects.filter(categoria = "LG", activo = True).order_by("-prioridad")
-        exps = ExperienciaProfesional.objects.filter(activo = True).order_by("-desde")
-
-    	html = render_to_string('pdf.html', 
-		{
-		'pagesize':'Letter', 
-		'infos':infos,
-		'tecnos':tecnos,
-		'lengs':lengs,
-		'exps':exps
-		}, context_instance=RequestContext(request))
-	return generar_pdf(html)
