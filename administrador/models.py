@@ -88,6 +88,6 @@ class Email(models.Model):
 	def __str__(self):
 		return self.sender
 
-class Image(models.Model):
+class Imagen(models.Model):
 	imagen = ImageField(upload_to="avatar")
 	activo = models.BooleanField()
