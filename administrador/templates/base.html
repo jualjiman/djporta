@@ -30,9 +30,11 @@
 			        <span class="icon-bar"></span>
 			      </button>
 			      <a class="navbar-brand" href="#">
+			      	
 			      	{% thumbnail avatar "300x300" crop="center" as av %}
-			      		<img src="{{ av.url }}"alt="">
+			      		<img src="{{ av.url }}" alt="">
 			      	{% endthumbnail %}
+
 			      	<h1>Juan Alberto Jiménez Ángel</h1>
 			      </a>
 			    </div>
@@ -42,7 +44,7 @@
 			      <ul class="nav navbar-nav">
 			        <li><a href="/"><span class="icon-information"></span>Información</a></li>
 			        <li><a href="/estudios"><span class="icon-studies"></span>Estudios</a></li>
-			        <li class="active"><a href="/proyectos"><span class="icon-projects"></span>Proyectos</a></li>
+			        <li><a href="/proyectos"><span class="icon-projects"></span>Proyectos</a></li>
 			        <li><a href="/contactame"><span class="icon-contact"></span>Contactame</a></li>
 			        
 			      </ul>
