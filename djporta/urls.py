@@ -15,15 +15,4 @@ urlpatterns = patterns('',
     url(r'^estudios/$', 'administrador.views.estudios', name='estudios'),
     url(r'^proyectos/$', 'administrador.views.proyectos', name='proyectos'),
     url(r'^contactame/$', 'administrador.views.contactame', name='contactame'),
-    url(r'^messages/$', 'administrador.views.messages', name='messages'),
-)
-
-# urlpatterns += patterns('',
-# 	url(r'^var/www/djporta/media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),)
-
-# if settings.DEBUG:
-#     urlpatterns += patterns('',
-#              (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT, 'show_indexes':True}),)
-
-#     urlpatterns += patterns('',
-#             (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes':True}),)
+    #url(r'^messages/$', 'administrador.views.messages', name='messages'), #recibia mensajes de mailgun y los guardaba en la bd
