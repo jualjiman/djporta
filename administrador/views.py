@@ -25,7 +25,7 @@ def home(request):
 	tecnos = InformacionGeneral.objects.filter(categoria = "TG", activo = True).order_by("-prioridad")
 	lengs = InformacionGeneral.objects.filter(categoria = "LG", activo = True).order_by("-prioridad")
 	exps = ExperienciaProfesional.objects.filter(activo = True).order_by("-desde")
-	avatar = Image.objects.filter(activo = True)[:1]
+	avatar = Imagen.objects.filter(activo = True)[0]
 
 	return render(
 		request,
