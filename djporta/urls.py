@@ -16,3 +16,4 @@ urlpatterns = patterns('',
     url(r'^proyectos/$', 'administrador.views.proyectos', name='proyectos'),
     url(r'^contactame/$', 'administrador.views.contactame', name='contactame'),
     #url(r'^messages/$', 'administrador.views.messages', name='messages'), #recibia mensajes de mailgun y los guardaba en la bd
+)
