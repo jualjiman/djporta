@@ -8,6 +8,8 @@ from .models import *
 from .forms import *
 from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail
+from django.views.generic import ListView
+
 """import requests"""
 
 fbAppId = 848121238581514
@@ -23,7 +25,10 @@ def home(request):
 	tecnos = InformacionGeneral.objects.filter(categoria = "TG", activo = True).order_by("-prioridad")
 	lengs = InformacionGeneral.objects.filter(categoria = "LG", activo = True).order_by("-prioridad")
 	exps = ExperienciaProfesional.objects.filter(activo = True).order_by("-desde")
-	avatar = Imagen.objects.filter(activo = True)[0]
+	avatar = Imagen.objects.filter(activo = True)
+
+	if len(avatar) > 0:
+		avatar = avatar[0]
 
 	return render(
 		request,
@@ -36,25 +41,35 @@ def home(request):
 			"avatar" : avatar,
 		})
 
-def estudios(request):
-	estus = Estudio.objects.filter(activo = True).order_by("-fecha")
-	
-	return render(
-		request,
-		"estudios.html",
-		{
-			"estus":estus,
-		})
+class estudios(ListView):
+	model = Estudio
+	queryset = Estudio.objects.filter(activo = True).order_by("-fecha")
+	template_name = "estudios.html"
 
-def proyectos(request):
-	proyes = Proyecto.objects.filter(activo = True).order_by("-fecha")
+# def estudios(request):
+# 	estus = Estudio.objects.filter(activo = True).order_by("-fecha")
 	
-	return render(
-		request,
-		"proyectos.html",
-		{
-			"proyes":proyes,
-		})
+# 	return render(
+# 		request,
+# 		"estudios.html",
+# 		{
+# 			"estus":estus,
+# 		})
+
+class proyectos(ListView):
+	model = Proyecto
+	queryset = Proyecto.objects.filter(activo = True).order_by("-fecha")
+	template_name = "proyectos.html"
+
+# def proyectos(request):
+# 	proyes = Proyecto.objects.filter(activo = True).order_by("-fecha")
+	
+# 	return render(
+# 		request,
+# 		"proyectos.html",
+# 		{
+# 			"proyes":proyes,
+# 		})
 
 """
 siempre estar pendiente de colocar el form como las variables que le pasas al template 
@@ -72,6 +87,7 @@ data={"from": nombre + " <" + email + ">",
       "subject": "Mensaje desde jualjiman.com",
       "text": mensaje})
 """
+
 def contactame(request):
 	if request.is_ajax():
 	    nombre = request.POST['name']

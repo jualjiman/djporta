@@ -8,7 +8,7 @@
 			<div class="container separacionVertical">
 			<h3 class="text-center tituloPrincipal">Últimos proyectos</h3>
 				<div class="row">
-					{% for proye in proyes %}
+					{% for proye in proyecto_list %}
 					<div class="col-sm-6 col-md-4 separacionVerticalMin proye-im">
 						{% if proye.link|length > 0 %}
 							<a class="thumbnail pRelative" href="{{ proye.link }}" target="_blank">
