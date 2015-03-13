@@ -72,6 +72,7 @@ data={"from": nombre + " <" + email + ">",
       "subject": "Mensaje desde jualjiman.com",
       "text": mensaje})
 """
+
 def contactame(request):
 	if request.is_ajax():
 	    nombre = request.POST['name']
